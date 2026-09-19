@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USTM PULSE | BIOFEST 2026 — Annual Sports, Esports &amp; Cultural Fest</title>
+    <meta name="description"
+        content="USTM PULSE presents BIOFEST 2026. Join the grand annual university festival featuring Sports, Esports tournaments, and Cultural Arena at University of Science and Technology Meghalaya.">
+    <meta name="keywords"
+        content="BIOFEST 2026, USTM PULSE, USTM, Sports, Esports, BGMI, Gully Cricket, Futsal, Dance, Arts, Festival">
+    <meta name="theme-color" content="#07070d">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="USTM PULSE | BIOFEST 2026">
+    <meta property="og:description"
+        content="Where Science Meets Sport & Culture. Compete for prestige, honor, and cash prizes in Sports, Esports & Cultural Arena.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Dynamic Canvas for ambient particles & confetti -->
+    <canvas id="bg-canvas"></canvas>
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Floating Glassmorphic Header / Navbar -->
+    <header class="navbar-wrapper">
+        <nav class="navbar" aria-label="Main Navigation">
+            <a href="#/" class="nav-brand" aria-label="Biofest 2026 Home">
+                <span class="brand-pulse"></span>
+                <span class="brand-text"><span class="neon-glow">BIO</span>FEST <small>2026</small></span>
+            </a>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#/" class="nav-link" data-nav="home">Home</a>
+                <a href="#/sports" class="nav-link" data-nav="sports">Sports</a>
+                <a href="#/esports" class="nav-link" data-nav="esports">Esports</a>
+                <a href="#/cultural" class="nav-link" data-nav="cultural">Cultural</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="#/register" class="nav-cta" data-nav="register">
+                    <span>Register</span>
+                    <span class="cta-arrow">→</span>
+                </a>
+                <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Dropdown Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#/" class="mobile-nav-link" data-nav="home">🏠 Home</a>
+            <a href="#/sports" class="mobile-nav-link" data-nav="sports">🏆 Sports</a>
+            <a href="#/esports" class="mobile-nav-link" data-nav="esports">🎮 Esports</a>
+            <a href="#/cultural" class="mobile-nav-link" data-nav="cultural">🎭 Cultural Arena</a>
+            <a href="#/register" class="mobile-nav-link mobile-cta" data-nav="register">⚡ Register Now</a>
+        </div>
+    </header>
+
+    <!-- ========================= -->
+    <!-- HOME VIEW -->
+    <!-- ========================= -->
+    <div class="view" id="view-home" data-view="home">
+
+        <section class="intro">
+            <div class="live-pill">
+                <span class="pulsing-dot"></span>
+                <span>USTM ANNUAL FESTIVAL • 2026</span>
+            </div>
+            <h1 class="glow-text">BIOFEST</h1>
+            <p class="intro-tagline">Where Science Meets Sport &amp; Culture</p>
+        </section>
+
+        <section class="hero spotlight-card">
+            <div class="hero-content">
+
+                <span class="hero-tag">⚡ USTM PULSE PRESENTS</span>
+
+                <h2>BIOFEST <span>2026</span></h2>
+
+                <p>
+                    A campus-wide celebration of <strong>Sports</strong>,
+                    <strong>Esports</strong> &amp; <strong>Cultural Talents</strong>.
+                    Compete for prestige, honor, and cash prizes!
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">03</span>
+                        <span class="stat-label">Arenas</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">11+</span>
+                        <span class="stat-label">Events</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">USTM</span>
+                        <span class="stat-label">Campus</span>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#/register" class="hero-btn primary shimmer-btn">
+                        <span>REGISTER NOW</span>
+                        <span class="btn-icon">⚡</span>
+                    </a>
+                    <a href="#events" class="hero-btn secondary" id="btn-explore-events">
+                        <span>EXPLORE ARENAS</span>
+                        <span class="btn-icon">↓</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="categories" id="events">
+            <div class="section-header">
+                <span class="section-eyebrow">CHOOSE YOUR ARENA</span>
+                <h3 class="section-title">Three Worlds. One Fest.</h3>
+            </div>
+
+            <div class="categories-grid">
+                <a href="#/sports" class="category-card sports spotlight-card">
+                    <div class="card-glow-bg"></div>
+                    <div class="card-content">
+                        <div class="icon-bubble">
+                            <span class="icon">🏆</span>
+                        </div>
+                        <h2>SPORTS</h2>
+                        <p>Compete • Challenge • Conquer</p>
+                        <span class="card-link-text">Enter Arena <span>→</span></span>
+                    </div>
+                </a>
+
+                <a href="#/esports" class="category-card esports spotlight-card">
+                    <div class="card-glow-bg"></div>
+                    <div class="card-content">
+                        <div class="icon-bubble">
+                            <span class="icon">🎮</span>
+                        </div>
+                        <h2>ESPORTS</h2>
+                        <p>Gaming • Competition • Glory</p>
+                        <span class="card-link-text">Enter Arena <span>→</span></span>
+                    </div>
+                </a>
+
+                <a href="#/cultural" class="category-card science spotlight-card">
+                    <div class="card-glow-bg"></div>
+                    <div class="card-content">
+                        <div class="icon-bubble">
+                            <span class="icon">🎭</span>
+                        </div>
+                        <h2>CULTURAL ARENA</h2>
+                        <p>Arts • Poster Making • Dance</p>
+                        <span class="card-link-text">Enter Arena <span>→</span></span>
+                    </div>
+                </a>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p class="footer-brand"><strong>BIOFEST 2026</strong> • USTM PULSE</p>
+                <p class="footer-sub">University of Science &amp; Technology, Meghalaya</p>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- SPORTS LIST VIEW -->
+    <!-- ========================= -->
+    <main class="view events-page" id="view-sports" data-view="sports">
+
+        <a href="#/" class="back-button">
+            <span class="back-arrow">←</span>
+            <span>Back to Home</span>
+        </a>
+
+        <div class="page-header">
+            <span class="page-badge sports-badge">ATHLETICS &amp; FIELD</span>
+            <h1>SPORTS</h1>
+            <p class="page-subtitle">Select your tournament and challenge the champions</p>
+        </div>
+
+        <div class="events-grid">
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7R860L7cnOY1uDkoHJNLOgW7mBbzZ-9CU1cDth_HR9BKglQ/viewform"
+                target="_blank" rel="noopener noreferrer" class="event-card sports-card spotlight-card">
+                <div class="card-glow-bg"></div>
+                <div class="event-icon">🏏</div>
+                <h2>Gully Cricket</h2>
+                <p>Team cricket tournament</p>
+                <span class="event-pill">5 Players</span>
+                <span class="event-btn">Register →</span>
+            </a>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScSIRNnWZpU3_XJrtnYO19B8g9UVNioEcl6VfnQCmdZjmuL9Q/viewform"
+                target="_blank" rel="noopener noreferrer" class="event-card sports-card spotlight-card">
+                <div class="card-glow-bg"></div>
+                <div class="event-icon">⚽</div>
+                <h2>Futsal</h2>
+                <p>Competitive football tournament</p>
+                <span class="event-pill">5 Players</span>
+                <span class="event-btn">Register →</span>
+            </a>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjZB-JWwO4agVHtBq03iLD6Drzu4XS_3hPPQL0vVim7RsRqQ/viewform"
+                target="_blank" rel="noopener noreferrer" class="event-card sports-card spotlight-card">
+                <div class="card-glow-bg"></div>
+                <div class="event-icon">🏸</div>
+                <h2>Badminton</h2>
+                <p>Men &amp; Women</p>
+                <span class="event-pill">Singles / Doubles</span>
+                <span class="event-btn">Register →</span>
+            </a>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdXF6snaWnAkAJgsOuEJaW-vrZoyUiQ6Vz3QHK1aCfgu51xww/viewform"
+                target="_blank" rel="noopener noreferrer" class="event-card sports-card spotlight-card">
+                <div class="card-glow-bg"></div>
+                <div class="event-icon">🏐</div>
+                <h2>Volleyball</h2>
+                <p>Team volleyball tournament</p>
+                <span class="event-pill">6 Players</span>
+                <span class="event-btn">Register →</span>
+            </a>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkGvBADimDK1L2z8WKAmHK6j4o5gf6fHm-K7ThTPYZ5y4gjw/viewform"
+                target="_blank" rel="noopener noreferrer" class="event-card sports-card spotlight-card">
+                <div class="card-glow-bg"></div>
+                <div class="event-icon">💪</div>
+                <h2>Arm Wrestling</h2>
+                <p>Arm Wrestling Men &amp; Women</p>
+                <span class="event-pill">1 Player</span>
+                <span class="event-btn">Register →</span>
+            </a>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbBmBZZ5NZ2VbTRp9hTCPeeEtSPowa-HEWeiyGZX3ndPKi1Q/viewform"
+                target="_blank" rel="noopener noreferrer" class="event-card sports-card spotlight-card">
+                <div class="card-glow-bg"></div>
+                <div class="event-icon">🎯</div>
+                <h2>Treasure Hunt</h2>
+                <p>Campus mystery &amp; clue hunt</p>
+                <span class="event-pill">5 Players</span>
+                <span class="event-btn">Register →</span>
+            </a>
+        </div>
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- ESPORTS LIST VIEW -->
+    <!-- ========================= -->
+    <main class="view events-page" id="view-esports" data-view="esports">
+
+        <a href="#/" class="back-button">
+            <span class="back-arrow">←</span>
+            <span>Back to Home</span>
+        </a>
+
+        <div class="page-header">
+            <span class="page-badge esports-badge">CYBER ARENA</span>
+            <h1>ESPORTS</h1>
+            <p class="page-subtitle">Lock in your squads and dominate the digital battleground</p>
+        </div>
+
+        <div class="events-grid">
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_tLJ0qYVgHwygc0RrUTr4wAha0ayuqb9k-ooH0hqWBrehvg/viewform"
+                target="_blank" rel="noopener noreferrer" class="event-card esports-card spotlight-card">
+                <div class="card-glow-bg"></div>
+                <div class="event-icon">🎯</div>
+                <h2>BGMI</h2>
+                <p>Battle Royale Tournament</p>
+                <span class="event-pill">Squad (4)</span>
+                <span class="event-btn">Register →</span>
+            </a>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyQTKHCe_KFmryFiWiG7fPnlGAV0yi1tJz16dfOtKylYCIdw/viewform"
+                target="_blank" rel="noopener noreferrer" class="event-card esports-card spotlight-card">
+                <div class="card-glow-bg"></div>
+                <div class="event-icon">⚔️</div>
+                <h2>Mobile Legends</h2>
+                <p>MOBA 5v5 Tournament</p>
+                <span class="event-pill">5 Players</span>
+                <span class="event-btn">Register →</span>
+            </a>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdV7g9pmT24F8uDN1BG1OwNUJnj3Ki1Kd4j06pO7dXjuWGeJw/viewform"
+                target="_blank" rel="noopener noreferrer" class="event-card esports-card spotlight-card">
+                <div class="card-glow-bg"></div>
+                <div class="event-icon">⚽</div>
+                <h2>eFootball</h2>
+                <p>Football Gaming Tournament</p>
+                <span class="event-pill">Individual</span>
+                <span class="event-btn">Register →</span>
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- CULTURAL ARENA VIEW -->
+    <!-- ========================= -->
+    <main class="view events-page" id="view-cultural" data-view="cultural">
+
+        <a href="#/" class="back-button">
+            <span class="back-arrow">←</span>
+            <span>Back to Home</span>
+        </a>
+
+        <div class="page-header">
+            <span class="page-badge science-badge">ARTS &amp; EXPRESSION</span>
+            <h1>CULTURAL ARENA</h1>
+            <p class="page-subtitle">
+                Showcase your creativity, artistry &amp; stage presence
+            </p>
+        </div>
+
+        <div class="events-grid">
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBpz-ekiHQkRY7Tn4RvEH2lT7GmWAJNAQ95mxa_8w8FqKT8A/viewform"
+                target="_blank" rel="noopener noreferrer" class="event-card science-card spotlight-card">
+                <div class="card-glow-bg"></div>
+                <div class="event-icon">🎨</div>
+                <h2>Arts &amp; Poster</h2>
+                <p>Painting, sketching &amp; poster competition</p>
+                <span class="event-pill">Individual</span>
+                <span class="event-btn">Register →</span>
+            </a>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSckrLPGiyUzCNYEx1NV2AWU3Z7ieTf8AYRkliqd78-Z8u8izw/viewform"
+                target="_blank" rel="noopener noreferrer" class="event-card science-card spotlight-card">
+                <div class="card-glow-bg"></div>
+                <div class="event-icon">💃</div>
+                <h2>Dance Showdown</h2>
+                <p>Solo, duo &amp; squad dance battle</p>
+                <span class="event-pill">Solo / Duo / Group (5)</span>
+                <span class="event-btn">Register →</span>
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- EVENT DETAILS VIEW -->
+    <!-- ========================= -->
+    <main class="view event-details-page" id="view-event" data-view="event">
+
+        <a href="#/sports" class="back-button" id="event-back-button">
+            <span class="back-arrow">←</span>
+            <span>Back to Events</span>
+        </a>
+
+        <div class="event-details-card spotlight-card">
+            <div class="card-glow-bg"></div>
+
+            <div class="event-details-header">
+                <div class="event-details-icon" id="event-icon">🏏</div>
+                <h1 id="event-name">Gully Cricket</h1>
+                <p class="event-details-description" id="event-description">
+                    Team cricket tournament at USTM PULSE.
+                </p>
+            </div>
+
+            <div class="event-info">
+
+                <div class="info-box">
+                    <div class="info-icon">👥</div>
+                    <div class="info-text">
+                        <strong>Team Size</strong>
+                        <span id="event-team">5 Players</span>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">💰</div>
+                    <div class="info-text">
+                        <strong>Entry Fee</strong>
+                        <span id="event-fee">₹400 / Team</span>
+                    </div>
+                </div>
+
+                <div class="info-box highlight-prize">
+                    <div class="info-icon">🏆</div>
+                    <div class="info-text">
+                        <strong>Prize Pool</strong>
+                        <span id="event-prize">₹10,000</span>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">📅</div>
+                    <div class="info-text">
+                        <strong>Date</strong>
+                        <span>USTM BIOFEST 2026</span>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">📍</div>
+                    <div class="info-text">
+                        <strong>Venue</strong>
+                        <span>USTM Campus</span>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">🛡️</div>
+                    <div class="info-text">
+                        <strong>Eligibility</strong>
+                        <span>College &amp; University Students</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="rules">
+                <h2>Tournament Guidelines</h2>
+                <ul>
+                    <li>Participants must carry a valid University/College ID card on event day.</li>
+                    <li>Official match schedules &amp; fixture draws will be communicated via WhatsApp group.</li>
+                    <li>Decision of the referees/organizers is final and binding in all match disputes.</li>
+                    <li>Fair play and sportsmanship are strictly enforced. Unfair conduct will lead to disqualification.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="event-cta-wrap">
+                <a href="#" id="register-button" target="_blank" rel="noopener noreferrer"
+                    class="register-button shimmer-btn">
+                    <span>REGISTER VIA GOOGLE FORM</span>
+                    <span class="btn-arrow">↗</span>
+                </a>
+                <a href="#" id="google-form-button" target="_blank" rel="noopener noreferrer" class="google-form-btn">
+                    <span>Direct Google Form ↗</span>
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- REGISTRATION VIEW -->
+    <!-- ========================= -->
+    <main class="view registration-page" id="view-register" data-view="register">
+
+        <a href="#/" id="back-button" class="back-button">
+            <span class="back-arrow">←</span>
+            <span>Back</span>
+        </a>
+
+        <div class="registration-card spotlight-card">
+            <div class="card-glow-bg"></div>
+
+            <div class="registration-header">
+                <span class="registration-badge">⚡ OFFICIAL FESTIVAL REGISTRATION</span>
+                <h1 id="registration-event-name">Festival Registration</h1>
+                <p class="registration-subtitle" id="registration-type">Select an event to proceed to the Google Form
+                </p>
+            </div>
+
+            <!-- EVENT SELECTOR -->
+            <div class="form-group" id="event-select-group">
+                <label for="event-select">Choose Your Tournament / Event *</label>
+                <div class="input-wrap">
+                    <span class="input-icon">🎯</span>
+                    <select id="event-select" name="event-select" class="form-select" required>
+                        <option value="">-- Select an Event to Register --</option>
+                        <optgroup label="🏆 Sports">
+                            <option value="cricket">🏏 Gully Cricket (5 Players)</option>
+                            <option value="futsal">⚽ Futsal (5 Players)</option>
+                            <option value="badminton">🏸 Badminton (Singles / Doubles)</option>
+                            <option value="volleyball">🏐 Volleyball (6 Players)</option>
+                            <option value="armwrestling">💪 Arm Wrestling (Individual)</option>
+                            <option value="treasurehunt">🎯 Treasure Hunt (5 Players)</option>
+                        </optgroup>
+                        <optgroup label="🎮 Esports">
+                            <option value="bgmi">🎯 BGMI Championship (Squad - 4)</option>
+                            <option value="mlbb">⚔️ Mobile Legends 5v5 (5 Players)</option>
+                            <option value="efootball">⚽ eFootball Open (Individual)</option>
+                        </optgroup>
+                        <optgroup label="🎭 Cultural Arena">
+                            <option value="arts">🎨 Arts &amp; Poster Competition (Individual)</option>
+                            <option value="dance">💃 Dance Showdown (Solo / Duo / Group 5)</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <!-- DYNAMIC EVENT REDIRECT CONTAINER -->
+            <div id="event-redirect-container" class="event-redirect-container" style="display: none;">
+
+                <div class="selected-event-card">
+                    <div class="selected-event-head">
+                        <span class="selected-event-icon" id="selected-event-icon">🏆</span>
+                        <div>
+                            <h2 id="selected-event-title" class="selected-event-title">Event Name</h2>
+                            <span id="selected-event-arena" class="selected-event-badge">Sports Arena</span>
+                        </div>
+                    </div>
+
+                    <div class="selected-event-meta-grid">
+                        <div class="selected-meta-item">
+                            <span class="selected-meta-label">Team Format</span>
+                            <span class="selected-meta-val" id="selected-event-team">5 Players</span>
+                        </div>
+
+                        <div class="selected-event-notice">
+                            <span class="notice-icon">ℹ️</span>
+                            <p class="selected-event-desc" id="selected-event-desc">
+                                Official team roster submission and registration verification is conducted via Google
+                                Forms. Click the button below to complete your registration.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="redirect-actions">
+                        <a href="#" id="main-google-form-btn" target="_blank" rel="noopener noreferrer"
+                            class="submit-registration shimmer-btn">
+                            <span class="btn-text">OPEN GOOGLE FORM &amp; REGISTER NOW</span>
+                            <span class="btn-arrow">↗</span>
+                        </a>
+                        <p class="redirect-subtext">Redirects directly to the official Google Form in a new tab</p>
+                    </div>
+
+                </div>
+
+                <!-- PROMPT WHEN NO EVENT IS SELECTED YET -->
+                <div id="no-event-prompt" class="no-event-prompt">
+                    <div class="prompt-icon">📋</div>
+                    <h3>Choose an Event Above</h3>
+                    <p>Pick any of the 11 Sports, Esports, or Cultural events from the dropdown to access its official
+                        Google Form registration link.</p>
+
+                    <!-- Quick Category Buttons -->
+                    <div class="quick-category-links">
+                        <a href="#/sports" class="quick-cat-btn">🏆 View Sports</a>
+                        <a href="#/esports" class="quick-cat-btn">🎮 View Esports</a>
+                        <a href="#/cultural" class="quick-cat-btn">🎭 View Cultural</a>
+                    </div>
+                </div>
+
+            </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
