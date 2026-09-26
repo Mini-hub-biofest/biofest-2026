@@ -3140,16 +3140,5 @@ body {
 /* BIOFEST BACKGROUND */
 /* BIOFEST BACKGROUND */
 #view-home {
-    background-image:
-        linear-gradient(
-            rgba(1, 7, 12, 0.20),
-            rgba(1, 7, 12, 0.55)
-        ),
-        url("gaming-bg.png") !important;
-
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: scroll !important;
-    background-color: #06121f !important;
+    background: url("gaming-bg.png") center center / cover no-repeat !important;
 }
