@@ -3112,3 +3112,18 @@ body {
     background-attachment: scroll !important;
     background-color: #06121f !important;
 }
+/* FINAL BIOFEST GAMING BACKGROUND */
+#view-home {
+    background-image:
+        linear-gradient(
+            rgba(1, 7, 12, 0.18),
+            rgba(1, 7, 12, 0.85)
+        ),
+        url("gaming-bg.png") !important;
+
+    background-size: 100% auto !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    background-color: #06121f !important;
+}
