@@ -638,8 +638,9 @@ a {
     background-clip: text;
     color: transparent;
     filter: drop-shadow(0 2px 14px rgba(0, 242, 254, 0.35));
+}
 
- .hero-organizer-info {
+.hero-organizer-info {
     display: flex;
     flex-direction: column;
     align-items: center;
