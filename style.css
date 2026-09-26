@@ -3065,7 +3065,7 @@ body {
             rgba(1, 7, 12, 0.28),
             rgba(1, 7, 12, 0.55)
         ),
-       url("./gaming-bg.png") !important;
+      url("./gaming-bg.png.png") !important;
 
     background-size: cover !important;
     background-position: center center !important;
