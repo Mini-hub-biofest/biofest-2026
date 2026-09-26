@@ -414,16 +414,22 @@ a {
 /* 1. HOME VIEW BACKGROUND */
 #view-home {
     background-image:
-        linear-gradient(
-            rgba(4, 9, 14, 0.25),
-            rgba(4, 9, 14, 0.45)
-        ),
-        url("gaming-bg.png.png");
+        url("gaming-bg.png.png"),
+        url("gaming-bg-2.png.png");
 
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-size:
+        100% auto,
+        100% auto;
+
+    background-position:
+        center top,
+        center bottom;
+
+    background-repeat:
+        no-repeat,
+        no-repeat;
+
+    background-attachment: scroll;
 }
 
 /* 2. SPORTS ARENA BACKGROUND (Stadium floodlights, athletic turf speed lanes & court grid) */
