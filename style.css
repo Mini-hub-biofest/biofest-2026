@@ -420,7 +420,7 @@ a {
         ),
         url("gaming-bg.png.png");
 
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
