@@ -3076,7 +3076,7 @@ body {
             rgba(1, 7, 12, 0.28),
             rgba(1, 7, 12, 0.55)
         ),
-        url("./biofest-gaming-bg.png") !important;
+       url("./gaming-bg.png") !important;
 
     background-size: cover !important;
     background-position: center center !important;
