@@ -1,23 +1,9 @@
 // ==========================================================================
-// BIOFEST 2026 — USTM PULSE
+// BIOFEST 1.0 — Department of Applied Biology & Bio-Technology, USTM
 // Interactive Single-Page App Router, Dynamic Forms, Animations & Effects
 // ==========================================================================
 
 const events = {
-    cricket: {
-        key: "cricket",
-        icon: "🏏",
-        name: "Gully Cricket",
-        description: "High-octane campus cricket showdown with rapid overs and electric energy at USTM PULSE.",
-        team: "5 Players",
-        teamSize: 5,
-        fee: "₹400 / Team",
-        prize: "₹10,000",
-        type: "Team Registration",
-        listPage: "sports",
-        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSd7R860L7cnOY1uDkoHJNLOgW7mBbzZ-9CU1cDth_HR9BKglQ/viewform"
-    },
-
     futsal: {
         key: "futsal",
         icon: "⚽",
@@ -25,39 +11,9 @@ const events = {
         description: "Intense 5v5 indoor/turf football tournament with rapid skill, tactics, and teamwork.",
         team: "5 Players",
         teamSize: 5,
-        fee: "₹500 / Team",
-        prize: "₹12,000",
         type: "Team Registration",
         listPage: "sports",
         googleForm: "https://docs.google.com/forms/d/e/1FAIpQLScSIRNnWZpU3_XJrtnYO19B8g9UVNioEcl6VfnQCmdZjmuL9Q/viewform"
-    },
-
-    badminton: {
-        key: "badminton",
-        icon: "🏸",
-        name: "Badminton",
-        description: "Fast-paced indoor badminton showdown for Men & Women across Singles and Doubles.",
-        team: "Singles / Doubles",
-        teamSize: 2,
-        fee: "₹150 / Singles • ₹250 / Doubles",
-        prize: "₹5,000",
-        type: "Individual / Doubles",
-        listPage: "sports",
-        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfjZB-JWwO4agVHtBq03iLD6Drzu4XS_3hPPQL0vVim7RsRqQ/viewform"
-    },
-
-    volleyball: {
-        key: "volleyball",
-        icon: "🏐",
-        name: "Volleyball",
-        description: "Spike, block, and dominate the court in this high-intensity 6-player volleyball championship.",
-        team: "6 Players",
-        teamSize: 6,
-        fee: "₹350 / Team",
-        prize: "₹8,000",
-        type: "Team Registration",
-        listPage: "sports",
-        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSdXF6snaWnAkAJgsOuEJaW-vrZoyUiQ6Vz3QHK1aCfgu51xww/viewform"
     },
 
     armwrestling: {
@@ -67,8 +23,6 @@ const events = {
         description: "Pure power, grip, technique, and willpower in the ultimate campus strength showdown.",
         team: "1 Player",
         teamSize: 1,
-        fee: "₹100 / Player",
-        prize: "₹3,000",
         type: "Individual Registration",
         listPage: "sports",
         googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfkGvBADimDK1L2z8WKAmHK6j4o5gf6fHm-K7ThTPYZ5y4gjw/viewform"
@@ -81,8 +35,6 @@ const events = {
         description: "Crack intricate scientific clues, decode campus riddles, and race against the clock to win.",
         team: "5 Players",
         teamSize: 5,
-        fee: "₹250 / Team",
-        prize: "₹6,000",
         type: "Team Registration",
         listPage: "sports",
         googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfbBmBZZ5NZ2VbTRp9hTCPeeEtSPowa-HEWeiyGZX3ndPKi1Q/viewform"
@@ -95,25 +47,9 @@ const events = {
         description: "Intense battle royale survival, gunplay, and squad strategy under esports tournament rules.",
         team: "Squad (4 Players)",
         teamSize: 4,
-        fee: "₹200 / Squad",
-        prize: "₹10,000",
         type: "Squad Registration",
         listPage: "esports",
         googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSd_tLJ0qYVgHwygc0RrUTr4wAha0ayuqb9k-ooH0hqWBrehvg/viewform"
-    },
-
-    mlbb: {
-        key: "mlbb",
-        icon: "⚔️",
-        name: "Mobile Legends (MLBB)",
-        description: "5v5 MOBA tactical action. Pick your heroes, push lanes, and destroy the enemy base.",
-        team: "5 Players",
-        teamSize: 5,
-        fee: "₹250 / Team",
-        prize: "₹8,000",
-        type: "Team Registration",
-        listPage: "esports",
-        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSeyQTKHCe_KFmryFiWiG7fPnlGAV0yi1tJz16dfOtKylYCIdw/viewform"
     },
 
     efootball: {
@@ -123,24 +59,68 @@ const events = {
         description: "Virtual football knockout cup. Precision passing, dribbling, and championship goals.",
         team: "Individual",
         teamSize: 1,
-        fee: "₹100 / Player",
-        prize: "₹4,000",
         type: "Individual Registration",
         listPage: "esports",
         googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSdV7g9pmT24F8uDN1BG1OwNUJnj3Ki1Kd4j06pO7dXjuWGeJw/viewform"
     },
 
-    arts: {
-        key: "arts",
-        icon: "🎨",
-        name: "Arts & Poster Competition",
-        description: "Showcase your artistic expression across painting, sketching, digital art & poster themes.",
-        team: "Individual",
-        teamSize: 1,
-        fee: "₹100 / Entry",
-        prize: "₹3,000 + Trophy",
-        type: "Individual Registration",
-        listPage: "cultural",
+    quiz: {
+        key: "quiz",
+        icon: "💡",
+        name: "Science & Quiz",
+        description: "Test your scientific knowledge, analytical reasoning, and rapid-fire trivia acumen in this university quiz championship.",
+        team: "Solo / Duo",
+        teamSize: 2,
+        type: "Solo / Duo Registration",
+        listPage: "science",
+        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfBpz-ekiHQkRY7Tn4RvEH2lT7GmWAJNAQ95mxa_8w8FqKT8A/viewform"
+    },
+
+    pitching: {
+        key: "pitching",
+        icon: "💡",
+        name: "Scientific & Pitching",
+        description: "Pitch your revolutionary scientific concepts, bio-tech startups, and research innovations with stellar presentation skills.",
+        team: "Solo / Duo",
+        teamSize: 2,
+        type: "Solo / Duo Registration",
+        listPage: "science",
+        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfBpz-ekiHQkRY7Tn4RvEH2lT7GmWAJNAQ95mxa_8w8FqKT8A/viewform"
+    },
+
+    foodwaste: {
+        key: "foodwaste",
+        icon: "♻️",
+        name: "Food Waste Innovation & Utilization",
+        description: "Present creative, sustainable bio-solutions and technological ideas for food waste management, composting, and valorization.",
+        team: "Solo / Duo",
+        teamSize: 2,
+        type: "Solo / Duo Registration",
+        listPage: "science",
+        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfBpz-ekiHQkRY7Tn4RvEH2lT7GmWAJNAQ95mxa_8w8FqKT8A/viewform"
+    },
+
+    modelmaking: {
+        key: "modelmaking",
+        icon: "🔬",
+        name: "Science Model Making",
+        description: "Demonstrate scientific concepts through innovative working or static models and showcase your technical prowess.",
+        team: "Solo / Duo",
+        teamSize: 2,
+        type: "Solo / Duo Registration",
+        listPage: "science",
+        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfBpz-ekiHQkRY7Tn4RvEH2lT7GmWAJNAQ95mxa_8w8FqKT8A/viewform"
+    },
+
+    poster: {
+        key: "poster",
+        icon: "📊",
+        name: "Scientific Poster Presentation",
+        description: "Display visual scientific research, bio-innovations, and creative infographics in front of expert judges.",
+        team: "Solo / Duo",
+        teamSize: 2,
+        type: "Solo / Duo Registration",
+        listPage: "science",
         googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfBpz-ekiHQkRY7Tn4RvEH2lT7GmWAJNAQ95mxa_8w8FqKT8A/viewform"
     },
 
@@ -151,11 +131,69 @@ const events = {
         description: "Solo, Duo, and Squad dance battle. Rhythm, choreography, synchronization and stage energy.",
         team: "Solo / Duo / Group (5)",
         teamSize: 5,
-        fee: "₹150 / Solo • ₹400 / Group",
-        prize: "₹8,000 + Trophy",
         type: "Solo / Duo / Group Registration",
         listPage: "cultural",
         googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSckrLPGiyUzCNYEx1NV2AWU3Z7ieTf8AYRkliqd78-Z8u8izw/viewform"
+    },
+
+    fashionshow: {
+        key: "fashionshow",
+        icon: "👠",
+        name: "Fashion Show",
+        description: "Strut the festival runway with flair, elegance, charisma, and trendsetting ethnic or modern couture.",
+        team: "Solo",
+        teamSize: 1,
+        type: "Solo Registration",
+        listPage: "cultural",
+        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfBpz-ekiHQkRY7Tn4RvEH2lT7GmWAJNAQ95mxa_8w8FqKT8A/viewform"
+    },
+
+    singing: {
+        key: "singing",
+        icon: "🎤",
+        name: "Singing Showdown",
+        description: "Showcase your vocal talent across Classical, Western, Bollywood, and Folk in Solo and Group singing categories.",
+        team: "Solo / Group",
+        teamSize: 5,
+        type: "Solo / Group Registration",
+        listPage: "cultural",
+        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSckrLPGiyUzCNYEx1NV2AWU3Z7ieTf8AYRkliqd78-Z8u8izw/viewform"
+    },
+
+    mun: {
+        key: "mun",
+        icon: "🏛️",
+        name: "Model United Nations (MUN)",
+        description: "Engage in diplomatic debate, international relations, crisis resolution, and committee deliberations.",
+        team: "Solo / Delegation",
+        teamSize: 2,
+        type: "Delegate Registration",
+        listPage: "cultural",
+        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSckrLPGiyUzCNYEx1NV2AWU3Z7ieTf8AYRkliqd78-Z8u8izw/viewform"
+    },
+
+    alumni: {
+        key: "alumni",
+        icon: "🎓",
+        name: "Alumni Registration & Pass",
+        description: "Welcome back home to USTM! Reconnect with faculty, departmental colleagues & alumni network, and receive your official BIOFEST 1.0 Alumni Delegate Pass.",
+        team: "Individual (Alumni)",
+        teamSize: 1,
+        type: "Alumni Delegate Pass",
+        listPage: "register",
+        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLScSIRNnWZpU3_XJrtnYO19B8g9UVNioEcl6VfnQCmdZjmuL9Q/viewform"
+    },
+
+    stalls: {
+        key: "stalls",
+        icon: "🎪",
+        name: "Commercial & Food Stall Booking",
+        description: "Book an exclusive kiosk or stall space at USTM Campus during the 3-day festival for food, beverages, student startups, gaming, or merchandise.",
+        team: "Vendor / Startup Team",
+        teamSize: 1,
+        type: "Vendor & Stall Booking",
+        listPage: "register",
+        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLScSIRNnWZpU3_XJrtnYO19B8g9UVNioEcl6VfnQCmdZjmuL9Q/viewform"
     }
 };
 
@@ -167,8 +205,7 @@ function updateActiveNav(routeName) {
     const navLinks = document.querySelectorAll(".nav-link, .nav-cta, .mobile-nav-link");
     navLinks.forEach(link => {
         const linkNav = link.dataset.nav;
-        const isMatch = (linkNav === routeName) ||
-            ((routeName === "cultural" || routeName === "science") && (linkNav === "cultural" || linkNav === "science"));
+        const isMatch = (linkNav === routeName);
         if (isMatch) {
             link.classList.add("active");
         } else {
@@ -184,9 +221,10 @@ function showView(name) {
     views.forEach(view => {
         const v = view.dataset.view;
         const isTarget = (v === name) ||
-            ((name === "cultural" || name === "science") && (v === "cultural" || v === "science")) ||
-            ((name === "esports" || name === "esport") && (v === "esports" || v === "esport")) ||
-            ((name === "sports" || name === "sport") && (v === "sports" || v === "sport"));
+            ((name === "cultural" || name === "culture") && (v === "cultural")) ||
+            ((name === "science") && (v === "science")) ||
+            ((name === "esports" || name === "esport") && (v === "esports")) ||
+            ((name === "sports" || name === "sport") && (v === "sports"));
 
         if (isTarget) {
             view.classList.add("active");
@@ -255,8 +293,6 @@ function renderEventDetails(eventKey) {
     const nameEl = document.getElementById("event-name");
     const descEl = document.getElementById("event-description");
     const teamEl = document.getElementById("event-team");
-    const feeEl = document.getElementById("event-fee");
-    const prizeEl = document.getElementById("event-prize");
     const backBtn = document.getElementById("event-back-button");
     const registerBtn = document.getElementById("register-button");
     const googleFormBtn = document.getElementById("google-form-button");
@@ -265,12 +301,10 @@ function renderEventDetails(eventKey) {
     if (nameEl) nameEl.textContent = event.name;
     if (descEl) descEl.textContent = event.description;
     if (teamEl) teamEl.textContent = event.team;
-    if (feeEl) feeEl.textContent = event.fee;
-    if (prizeEl) prizeEl.textContent = event.prize;
 
     if (backBtn) {
-        backBtn.href = "#/" + event.listPage;
-        backBtn.innerHTML = `<span class="back-arrow">←</span><span>Back to ${event.listPage.toUpperCase()}</span>`;
+        backBtn.href = event.listPage === "register" ? "#/" : "#/" + event.listPage;
+        backBtn.innerHTML = `<span class="back-arrow">←</span><span>Back to ${event.listPage === "register" ? "HOME" : event.listPage.toUpperCase()}</span>`;
     }
 
     // Direct redirection to the event's Google Form
@@ -316,27 +350,35 @@ function renderRegistrationForm(eventKey) {
     const selectedTitle = document.getElementById("selected-event-title");
     const selectedArena = document.getElementById("selected-event-arena");
     const selectedTeam = document.getElementById("selected-event-team");
-    const selectedFee = document.getElementById("selected-event-fee");
-    const selectedPrize = document.getElementById("selected-event-prize");
+    const selectedStatus = document.getElementById("selected-event-status");
     const selectedDesc = document.getElementById("selected-event-desc");
     const mainGoogleFormBtn = document.getElementById("main-google-form-btn");
 
     if (event) {
         if (registrationEventName) registrationEventName.textContent = event.name;
-        if (registrationType) registrationType.textContent = event.type + " • " + event.fee;
+        if (registrationType) registrationType.textContent = event.type;
         if (eventSelect) eventSelect.value = event.key;
 
         if (selectedIcon) selectedIcon.textContent = event.icon;
         if (selectedTitle) selectedTitle.textContent = event.name;
         if (selectedArena) {
-            const arenaLabel = event.listPage.charAt(0).toUpperCase() + event.listPage.slice(1);
-            selectedArena.textContent = arenaLabel + " Arena";
+            let label = "Registration Portal";
+            if (event.listPage === "sports") label = "Sports Arena";
+            else if (event.listPage === "esports") label = "Esports Arena";
+            else if (event.listPage === "science") label = "Science Arena";
+            else if (event.listPage === "cultural") label = "Cultural Arena";
+            else if (event.key === "alumni") label = "Alumni Network";
+            else if (event.key === "stalls") label = "Stalls & Expo";
+
+            selectedArena.textContent = label;
+            const badgeClass = (event.key === "alumni" || event.key === "stalls") ? `badge-${event.key}` : `badge-${event.listPage}`;
+            selectedArena.className = `selected-event-badge ${badgeClass}`;
         }
         if (selectedTeam) selectedTeam.textContent = event.team;
-        if (selectedFee) selectedFee.textContent = event.fee;
-        if (selectedPrize) selectedPrize.textContent = event.prize;
+        const selectedStatus = document.getElementById("selected-event-status");
+        if (selectedStatus) selectedStatus.textContent = "Open for Registration";
         if (selectedDesc) {
-            selectedDesc.textContent = `${event.description} Official registration & payment verification for ${event.name} is handled via Google Forms. Click the button below to register your entry.`;
+            selectedDesc.textContent = `${event.description} Official registration & verification for ${event.name} is handled directly via Google Forms. Click the button below to register your entry.`;
         }
 
         if (mainGoogleFormBtn) {
@@ -352,12 +394,12 @@ function renderRegistrationForm(eventKey) {
         if (noEventPrompt) noEventPrompt.style.display = "none";
 
         if (backButton) {
-            backButton.href = "#/" + event.listPage;
-            backButton.innerHTML = `<span class="back-arrow">←</span><span>Back to ${event.listPage.toUpperCase()}</span>`;
+            backButton.href = event.listPage === "register" ? "#/" : "#/" + event.listPage;
+            backButton.innerHTML = `<span class="back-arrow">←</span><span>Back to ${event.listPage === "register" ? "Home" : event.listPage.toUpperCase()}</span>`;
         }
     } else {
         if (registrationEventName) registrationEventName.textContent = "Festival Registration";
-        if (registrationType) registrationType.textContent = "Select an event to proceed to the Google Form";
+        if (registrationType) registrationType.textContent = "Select an event or portal to proceed to the Google Form";
         if (eventSelect) eventSelect.value = "";
 
         if (eventRedirectContainer) eventRedirectContainer.style.display = "none";
@@ -411,7 +453,12 @@ function handleRoute() {
     let [section, key] = parts;
 
     // Normalize section names & aliases
-    if (section === "cultural" || section === "culture" || section === "science") {
+    if (section === "science") {
+        showView("science");
+        return;
+    }
+
+    if (section === "cultural" || section === "culture") {
         showView("cultural");
         return;
     }
@@ -440,6 +487,16 @@ function handleRoute() {
 
     // Default fallback
     showView("home");
+    enforceTargetBlankOnGoogleForms();
+}
+
+// Ensure every Google Form link automatically opens in a new tab with security attributes
+function enforceTargetBlankOnGoogleForms() {
+    const googleFormLinks = document.querySelectorAll('a[href*="docs.google.com/forms"], a[href*="forms.gle"]');
+    googleFormLinks.forEach(link => {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+    });
 }
 
 window.addEventListener("hashchange", handleRoute);
@@ -447,6 +504,8 @@ window.addEventListener("DOMContentLoaded", () => {
     handleRoute();
     initParticleCanvas();
     setupSmoothExplore();
+    initCountdownTimer();
+    enforceTargetBlankOnGoogleForms();
 });
 
 // Smooth scroll for "Explore Arenas"
@@ -464,12 +523,67 @@ function setupSmoothExplore() {
 }
 
 // ==========================================================================
-// INTERACTIVE PARTICLES CANVAS (CYBER & BIO ENERGY DUST)
+// LIVE FESTIVAL COUNTDOWN TIMER (STARTS 13 OCT 2026, 9:00 AM IST)
+// ==========================================================================
+
+function initCountdownTimer() {
+    // Official Event Start: 13th October 2026 at 09:00:00 AM IST (UTC+05:30)
+    const targetDate = new Date("2026-10-13T09:00:00+05:30").getTime();
+
+    function update() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        const daysEl = document.getElementById("cd-days");
+        const hoursEl = document.getElementById("cd-hours");
+        const minsEl = document.getElementById("cd-mins");
+        const secsEl = document.getElementById("cd-secs");
+        const statusEl = document.getElementById("countdown-status");
+        const countdownCard = document.getElementById("festival-countdown");
+
+        if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+        if (diff <= 0) {
+            daysEl.textContent = "00";
+            hoursEl.textContent = "00";
+            minsEl.textContent = "00";
+            secsEl.textContent = "00";
+            if (statusEl) {
+                statusEl.textContent = "🎉 BIOFEST 1.0 IS LIVE NOW!";
+                statusEl.classList.add("live-active");
+            }
+            if (countdownCard) {
+                countdownCard.classList.add("event-live");
+            }
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        daysEl.textContent = String(days).padStart(2, "0");
+        hoursEl.textContent = String(hours).padStart(2, "0");
+        minsEl.textContent = String(mins).padStart(2, "0");
+        secsEl.textContent = String(secs).padStart(2, "0");
+
+        if (statusEl && !statusEl.classList.contains("live-active")) {
+            statusEl.textContent = "BIOFEST 1.0 STARTS IN • 13 OCT, 9:00 AM IST";
+        }
+    }
+
+    update();
+    setInterval(update, 1000);
+}
+
+// ==========================================================================
+// ORGANIC AMBIENT NEBULA & GLOWING STARDUST (HUMAN-CRAFTED AESTHETIC)
 // ==========================================================================
 
 let canvas, ctx;
 let particles = [];
-let mouse = { x: null, y: null, radius: 130 };
+let mouse = { x: null, y: null, radius: 160 };
 
 function initParticleCanvas() {
     canvas = document.getElementById("bg-canvas");
@@ -490,20 +604,32 @@ function initParticleCanvas() {
     });
 
     const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 28 : 55;
+    const particleCount = isMobile ? 32 : 65;
     particles = [];
 
-    const colors = ["#00e5ff", "#8b5cf6", "#ff2bd6", "#38bdf8", "#10b981"];
+    // Curated Bioluminescent Biotech cellular palette: GFP Green, Electric Bio-Cyan, Emerald Mint, Molecular Aqua
+    const palette = [
+        { r: 0, g: 255, b: 135 },    // Fluorescent GFP Green
+        { r: 0, g: 242, b: 254 },    // Electric Bio-Cyan
+        { r: 16, g: 185, b: 129 },   // Deep Emerald Mint
+        { r: 52, g: 211, b: 153 },   // Bioluminescent Mint
+        { r: 56, g: 189, b: 248 }    // Molecular Blue
+    ];
 
     for (let i = 0; i < particleCount; i++) {
+        const colorObj = palette[Math.floor(Math.random() * palette.length)];
         particles.push({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            vx: (Math.random() - 0.5) * 0.65,
-            vy: (Math.random() - 0.5) * 0.65,
-            radius: Math.random() * 2 + 1,
-            color: colors[Math.floor(Math.random() * colors.length)],
-            baseAlpha: Math.random() * 0.35 + 0.2
+            baseX: Math.random() * canvas.width,
+            baseY: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.4,
+            vy: (Math.random() - 0.5) * 0.4,
+            radius: Math.random() * 2.4 + 1.0,
+            color: colorObj,
+            alpha: Math.random() * 0.45 + 0.18,
+            pulseSpeed: Math.random() * 0.02 + 0.008,
+            pulsePhase: Math.random() * Math.PI * 2
         });
     }
 
@@ -524,15 +650,19 @@ function animateParticles() {
     for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
 
+        p.pulsePhase += p.pulseSpeed;
+        const currentAlpha = p.alpha + Math.sin(p.pulsePhase) * 0.12;
+
         p.x += p.vx;
         p.y += p.vy;
 
-        // Bounce on boundaries
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+        // Wrap around boundaries smoothly
+        if (p.x < -20) p.x = canvas.width + 20;
+        if (p.x > canvas.width + 20) p.x = -20;
+        if (p.y < -20) p.y = canvas.height + 20;
+        if (p.y > canvas.height + 20) p.y = -20;
 
-        // Mouse interaction (gentle repel & glow)
-        let alpha = p.baseAlpha;
+        // Soft fluid mouse deflection
         if (mouse.x !== null && mouse.y !== null) {
             const dx = mouse.x - p.x;
             const dy = mouse.y - p.y;
@@ -541,40 +671,44 @@ function animateParticles() {
             if (dist < mouse.radius) {
                 const angle = Math.atan2(dy, dx);
                 const force = (mouse.radius - dist) / mouse.radius;
-                p.x -= Math.cos(angle) * force * 1.6;
-                p.y -= Math.sin(angle) * force * 1.6;
-                alpha = Math.min(1, p.baseAlpha + force * 0.6);
+                p.x -= Math.cos(angle) * force * 2.2;
+                p.y -= Math.sin(angle) * force * 2.2;
             }
         }
 
-        // Draw particle
+        // Draw soft glowing bioluminescent cell halo
+        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius * 3.8);
+        grad.addColorStop(0, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${Math.max(0, currentAlpha)})`);
+        grad.addColorStop(0.5, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${Math.max(0, currentAlpha * 0.35)})`);
+        grad.addColorStop(1, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, 0)`);
+
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.globalAlpha = alpha;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = p.color;
+        ctx.arc(p.x, p.y, p.radius * 3.8, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
         ctx.fill();
 
-        // Connect nearby particles with subtle glowing lines
+        // Sharp glowing nucleus
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius * 0.8, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${Math.max(0, currentAlpha + 0.25)})`;
+        ctx.fill();
+
+        // Draw delicate bioluminescent molecular filaments between nearby bio-cells
         for (let j = i + 1; j < particles.length; j++) {
             const p2 = particles[j];
             const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-
-            if (dist < 115) {
+            if (dist < 80) {
+                const lineAlpha = (1 - dist / 80) * 0.12;
                 ctx.beginPath();
                 ctx.moveTo(p.x, p.y);
                 ctx.lineTo(p2.x, p2.y);
-                ctx.strokeStyle = p.color;
-                ctx.globalAlpha = (1 - dist / 115) * 0.16;
-                ctx.lineWidth = 0.8;
+                ctx.strokeStyle = `rgba(0, 255, 135, ${lineAlpha})`;
+                ctx.lineWidth = 0.6;
                 ctx.stroke();
             }
         }
     }
 
-    ctx.globalAlpha = 1;
-    ctx.shadowBlur = 0;
     requestAnimationFrame(animateParticles);
 }
 
