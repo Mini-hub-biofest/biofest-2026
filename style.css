@@ -3103,3 +3103,12 @@ body {
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
 }
+/* FINAL BIOFEST BACKGROUND FIX */
+#view-home {
+    background-image: url("gaming-bg.png") !important;
+    background-size: contain !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    background-color: #06121f !important;
+}
