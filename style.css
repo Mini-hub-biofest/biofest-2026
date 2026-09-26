@@ -3053,29 +3053,5 @@ body {
     .metric-lbl {
         font-size: 0.5rem !important;
     }
-/* BIOFEST GAMING BACKGROUND */
-#view-home {
-    position: relative !important;
-    min-height: 100vh !important;
 
-    background-image:
-        linear-gradient(
-            rgba(1, 7, 12, 0.20),
-            rgba(1, 7, 12, 0.45)
-        ),
-        url("gaming-bg.png.png") !important;
-
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-    background-color: #06121f !important;
-
-    overflow: hidden !important;
-}
-
-#view-home > * {
-    position: relative !important;
-    z-index: 1 !important;
-}
 
