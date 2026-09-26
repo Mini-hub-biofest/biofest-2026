@@ -3138,8 +3138,9 @@ body {
     z-index: 1 !important;
 }
 /* BIOFEST BACKGROUND */
+/* BIOFEST BACKGROUND */
 #view-home {
-    background-image: 
+    background-image:
         linear-gradient(
             rgba(1, 7, 12, 0.20),
             rgba(1, 7, 12, 0.55)
