@@ -3089,3 +3089,17 @@ body {
     background: url("biofest-gaming-bg.png") center center / cover no-repeat !important;
     min-height: 100vh !important;
 }
+/* BIOFEST GAMING BACKGROUND - FINAL */
+#view-home {
+    background-image:
+        linear-gradient(
+            rgba(4, 9, 14, 0.30),
+            rgba(4, 9, 14, 0.55)
+        ),
+        url("./gaming-bg.png") !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
