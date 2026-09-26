@@ -3161,3 +3161,7 @@ body {
     pointer-events: none !important;
     z-index: 0 !important;
 }
+#view-home > * {
+    position: relative !important;
+    z-index: 1 !important;
+}
