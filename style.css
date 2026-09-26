@@ -3133,35 +3133,22 @@ body {
     background: #06121f !important;
     overflow: hidden !important;
 }
-
-#view-home::after {
-    content: "" !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 650px !important;
-
-    background: url("gaming-bg.png") top center / 100% auto no-repeat !important;
-
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        black 0%,
-        black 55%,
-        transparent 100%
-    ) !important;
-
-    mask-image: linear-gradient(
-        to bottom,
-        black 0%,
-        black 55%,
-        transparent 100%
-    ) !important;
-
-    pointer-events: none !important;
-    z-index: 0 !important;
-}
 #view-home > * {
     position: relative !important;
     z-index: 1 !important;
+}
+/* BIOFEST BACKGROUND */
+#view-home {
+    background-image: 
+        linear-gradient(
+            rgba(1, 7, 12, 0.20),
+            rgba(1, 7, 12, 0.55)
+        ),
+        url("gaming-bg.png") !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    background-color: #06121f !important;
 }
