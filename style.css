@@ -2297,7 +2297,7 @@ body {
         ),
         url("biofest-gaming-bg.png") !important;
 
-    background-size: cover !important;
+    background-size: 100% auto !important;
     background-position: center top !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
