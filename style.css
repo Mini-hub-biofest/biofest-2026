@@ -3083,3 +3083,9 @@ body {
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
 }
+/* ===== TEST GAMING BACKGROUND ===== */
+
+#view-home {
+    background: url("biofest-gaming-bg.png") center center / cover no-repeat !important;
+    min-height: 100vh !important;
+}
