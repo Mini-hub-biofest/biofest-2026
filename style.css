@@ -3053,78 +3053,29 @@ body {
     .metric-lbl {
         font-size: 0.5rem !important;
     }
-}
-/* ===== BIOFEST GAMING BACKGROUND - FINAL ===== */
-
-#view-home {
-    background-image:
-        linear-gradient(
-            rgba(1, 7, 12, 0.28),
-            rgba(1, 7, 12, 0.55)
-        ),
-      url("./gaming-bg.png.png") !important;
-
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-}
-/* ===== TEST GAMING BACKGROUND ===== */
-
-#view-home {
-    background: url("biofest-gaming-bg.png") center center / cover no-repeat !important;
-    min-height: 100vh !important;
-}
-/* BIOFEST GAMING BACKGROUND - FINAL */
-#view-home {
-    background-image:
-        linear-gradient(
-            rgba(4, 9, 14, 0.30),
-            rgba(4, 9, 14, 0.55)
-        ),
-        url("./gaming-bg.png") !important;
-
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-}
-/* FINAL BIOFEST BACKGROUND FIX */
-#view-home {
-    background-image: url("gaming-bg.png") !important;
-    background-size: contain !important;
-    background-position: top center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: scroll !important;
-    background-color: #06121f !important;
-}
-/* FINAL BIOFEST GAMING BACKGROUND */
-#view-home {
-    background-image:
-        linear-gradient(
-            rgba(1, 7, 12, 0.18),
-            rgba(1, 7, 12, 0.85)
-        ),
-        url("gaming-bg.png") !important;
-
-    background-size: 100% auto !important;
-    background-position: top center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: scroll !important;
-    background-color: #06121f !important;
-}
-/* BIOFEST FINAL BACKGROUND */
+/* BIOFEST GAMING BACKGROUND */
 #view-home {
     position: relative !important;
-    background: #06121f !important;
+    min-height: 100vh !important;
+
+    background-image:
+        linear-gradient(
+            rgba(1, 7, 12, 0.20),
+            rgba(1, 7, 12, 0.45)
+        ),
+        url("gaming-bg.png.png") !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-color: #06121f !important;
+
     overflow: hidden !important;
 }
+
 #view-home > * {
     position: relative !important;
     z-index: 1 !important;
 }
-/* BIOFEST BACKGROUND */
-/* BIOFEST BACKGROUND */
-#view-home {
-    background: url("gaming-bg.png") center center / cover no-repeat !important;
-}
+
