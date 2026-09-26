@@ -417,8 +417,12 @@ a {
         radial-gradient(ellipse 950px 520px at 50% -5%, rgba(0, 255, 135, 0.15) 0%, rgba(0, 242, 254, 0.08) 45%, transparent 70%),
         radial-gradient(circle 650px at 95% 45%, rgba(0, 242, 254, 0.1) 0%, transparent 60%),
         radial-gradient(circle 650px at 5% 65%, rgba(16, 185, 129, 0.1) 0%, transparent 60%),
-        radial-gradient(rgba(0, 255, 135, 0.14) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px;
+        radial-gradient(rgba(0, 255, 135, 0.14) 1px, transparent 1px),
+        url("gaming-bg.png.png");
+
+    background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px, cover;
+    background-position: center, center, center, center, center;
+    background-repeat: no-repeat, no-repeat, no-repeat, repeat, no-repeat;
     background-attachment: fixed;
 }
 
