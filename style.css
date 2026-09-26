@@ -411,14 +411,18 @@ a {
    THEMED ARENA BACKGROUNDS (SPORTS, ESPORTS, SCIENCE, CULTURAL)
    ========================================================================== */
 
-/* 1. HOME VIEW BACKGROUND (Bioluminescent Biotechnology Ambience) */
+/* 1. HOME VIEW BACKGROUND */
 #view-home {
     background-image:
-        radial-gradient(ellipse 950px 520px at 50% -5%, rgba(0, 255, 135, 0.15) 0%, rgba(0, 242, 254, 0.08) 45%, transparent 70%),
-        radial-gradient(circle 650px at 95% 45%, rgba(0, 242, 254, 0.1) 0%, transparent 60%),
-        radial-gradient(circle 650px at 5% 65%, rgba(16, 185, 129, 0.1) 0%, transparent 60%),
-        radial-gradient(rgba(0, 255, 135, 0.14) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px;
+        linear-gradient(
+            rgba(4, 9, 14, 0.25),
+            rgba(4, 9, 14, 0.45)
+        ),
+        url("gaming-bg.png.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
