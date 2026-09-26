@@ -415,17 +415,27 @@ a {
 #view-home {
     background-image:
         url("gaming-bg.png.png"),
-        url("gaming-bg-2.png.png");
+        url("gaming-bg-2.png.png"),
+        linear-gradient(
+            to bottom,
+            #050b12 0%,
+            #07151d 45%,
+            #06141b 55%,
+            #050b12 100%
+        );
 
     background-size:
         100% auto,
-        100% auto;
+        100% auto,
+        100% 100%;
 
     background-position:
         center top,
-        center bottom;
+        center bottom,
+        center center;
 
     background-repeat:
+        no-repeat,
         no-repeat,
         no-repeat;
 
