@@ -3068,3 +3068,18 @@ body {
         font-size: 0.5rem !important;
     }
 }
+/* ===== BIOFEST GAMING BACKGROUND - FINAL ===== */
+
+#view-home {
+    background-image:
+        linear-gradient(
+            rgba(1, 7, 12, 0.28),
+            rgba(1, 7, 12, 0.55)
+        ),
+        url("./biofest-gaming-bg.png") !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
