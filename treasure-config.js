@@ -18,7 +18,10 @@ const HUNT_CONFIG = {
     start: {
       type: "question",
 
-      question: "Which path will you take?",
+      title: "THE FIRST TRAIL",
+
+      question:
+        "Which path will you take?",
 
       answers: [
         {
