@@ -40,23 +40,74 @@ const HUNT_CONFIG = {
 
 
     // =========================
-    // LIBRARY CLUE
+    // LIBRARY — SECOND QUESTION
     // =========================
 
     library: {
+      type: "question",
+
+      title: "THE SECOND TRAIL",
+
+      question:
+        "You found the place where knowledge waits. " +
+        "Now choose your next path carefully.",
+
+      answers: [
+        {
+          text: "The place where experiments come alive",
+          next: "lab"
+        },
+
+        {
+          text: "The place where everyone gathers to eat",
+          next: "cafeteria"
+        },
+
+        {
+          text: "The place where people come to play",
+          next: "ground"
+        }
+      ]
+    },
+
+
+    // =========================
+    // LAB CLUE
+    // =========================
+
+    lab: {
       type: "clue",
 
       title: "CLUE UNLOCKED",
 
       clue:
-        "Thousands of stories rest silently behind my walls. " +
-        "I have no voice, yet I speak through every page. " +
-        "Find the place where knowledge waits to be opened.",
+        "Glass, experiments and curious minds surround this place. " +
+        "Your next discovery is waiting where science comes to life.",
 
       location:
         "Find the next BIOFEST QR code at the place described by this clue.",
 
-      qrId: "QR-02"
+      qrId: "QR-05"
+    },
+
+
+    // =========================
+    // CAFETERIA CLUE
+    // =========================
+
+    cafeteria: {
+      type: "clue",
+
+      title: "CLUE UNLOCKED",
+
+      clue:
+        "When hunger calls, students gather here. " +
+        "Follow the scent of food and find your next clue.",
+
+      location:
+        "Find the next BIOFEST QR code at the place described by this clue.",
+
+      qrId: "QR-06"
     },
 
 
@@ -70,13 +121,13 @@ const HUNT_CONFIG = {
       title: "CLUE UNLOCKED",
 
       clue:
-        "Where competition, speed and cheers come together, " +
-        "your next path awaits.",
+        "Where footsteps become races and cheers become louder, " +
+        "your next clue waits.",
 
       location:
         "Find the next BIOFEST QR code at the place described by this clue.",
 
-      qrId: "QR-03"
+      qrId: "QR-07"
     },
 
 
@@ -100,6 +151,7 @@ const HUNT_CONFIG = {
     }
 
   },
+
 
   // =========================
   // FINAL SCREEN
