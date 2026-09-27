@@ -2265,3 +2265,460 @@ a {
         scroll-behavior: auto !important;
     }
 }
+/* ==========================================================================
+   BIOFEST — MOBILE OPTIMIZATION
+   Desktop styles remain completely untouched.
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* ---------- GLOBAL MOBILE ---------- */
+
+    html {
+        font-size: 15px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar-wrapper {
+        width: calc(100% - 24px);
+        top: 10px;
+        padding-top: 2px;
+    }
+
+    .navbar {
+        padding: 9px 12px 9px 16px;
+        border-radius: 24px;
+    }
+
+    .nav-brand {
+        gap: 7px;
+        font-size: 0.95rem;
+    }
+
+    .brand-year {
+        font-size: 0.62rem;
+        padding: 2px 5px;
+    }
+
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    /* ---------- HOME BACKGROUND ---------- */
+
+    #view-home {
+        background-size:
+            auto 420px,
+            auto 420px,
+            100% 100%;
+
+        background-position:
+            center top,
+            center bottom,
+            center center;
+
+        background-repeat:
+            no-repeat,
+            no-repeat,
+            no-repeat;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero-stage {
+        min-height: auto;
+        padding: 55px 16px 55px;
+    }
+
+    .hero-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-glow-aura {
+        width: 100vw;
+        height: 360px;
+        filter: blur(65px);
+    }
+
+    .hero-badge-wrap {
+        margin-bottom: 18px;
+    }
+
+    .hero-live-pill {
+        padding: 7px 16px;
+        font-size: 0.66rem;
+        letter-spacing: 1.1px;
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 17vw, 5rem);
+        letter-spacing: 1px;
+        line-height: 0.98;
+        margin-bottom: 16px;
+    }
+
+    .hero-lead {
+        width: 100%;
+        margin-bottom: 26px;
+        gap: 10px;
+    }
+
+    .hero-tagline {
+        font-size: clamp(0.95rem, 4vw, 1.25rem);
+        letter-spacing: 1.5px;
+        line-height: 1.35;
+    }
+
+    .hero-org-label {
+        font-size: 0.68rem;
+        letter-spacing: 1.5px;
+    }
+
+    .hero-org-dept {
+        font-size: 1rem;
+        line-height: 1.35;
+    }
+
+    .hero-org-uni {
+        font-size: 0.85rem;
+    }
+
+    .hero-org-naac {
+        font-size: 0.68rem;
+        padding: 4px 12px;
+    }
+
+    /* ---------- COUNTDOWN ---------- */
+
+    .countdown-card {
+        width: 100%;
+        max-width: 390px;
+        padding: 15px 10px;
+        margin-bottom: 26px;
+        border-radius: 22px;
+    }
+
+    .countdown-grid {
+        width: 100%;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .countdown-item {
+        min-width: 0;
+        flex: 1;
+        padding: 9px 5px;
+        border-radius: 14px;
+    }
+
+    .countdown-num {
+        font-size: clamp(1.35rem, 7vw, 2rem);
+    }
+
+    .countdown-unit {
+        font-size: 0.52rem;
+        letter-spacing: 1px;
+    }
+
+    .countdown-sep {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    /* ---------- HERO BUTTONS ---------- */
+
+    .hero-actions {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .hero-btn {
+        width: min(100%, 340px);
+        justify-content: center;
+        padding: 13px 24px;
+    }
+
+    /* ---------- METRICS ---------- */
+
+    .hero-metric-strip {
+        width: 100%;
+        max-width: 370px;
+        justify-content: space-around;
+        gap: 8px;
+        padding: 10px 12px;
+        border-radius: 24px;
+    }
+
+    .metric-val {
+        font-size: 0.95rem;
+    }
+
+    .metric-lbl {
+        font-size: 0.56rem;
+        letter-spacing: 0.8px;
+    }
+
+    .metric-sep {
+        height: 20px;
+    }
+
+    /* ---------- SECTIONS ---------- */
+
+    .categories,
+    .special-portals,
+    .events-page,
+    .event-details-page,
+    .registration-page {
+        width: calc(100% - 24px);
+    }
+
+    .categories {
+        padding: 30px 0 55px;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    .section-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+    }
+
+    .section-title {
+        font-size: clamp(1.7rem, 8vw, 2.3rem);
+    }
+
+    .section-subtitle {
+        font-size: 0.82rem;
+    }
+
+    /* ---------- CATEGORY CARDS ---------- */
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .category-card {
+        min-height: auto;
+        padding: 24px 18px;
+        border-radius: 22px;
+    }
+
+    .card-top-row {
+        margin-bottom: 18px;
+    }
+
+    .icon-bubble {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 15px;
+        border-radius: 18px;
+    }
+
+    .category-card .icon {
+        font-size: 2.1rem;
+    }
+
+    .category-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .category-card p {
+        font-size: 0.82rem;
+    }
+
+    /* ---------- SPECIAL PORTALS ---------- */
+
+    .special-portals {
+        margin: 0 auto 50px;
+    }
+
+    .special-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .special-card {
+        padding: 22px 18px;
+        border-radius: 22px;
+    }
+
+    .special-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .special-info p {
+        font-size: 0.8rem;
+    }
+
+    /* ---------- EVENT LIST ---------- */
+
+    .events-page {
+        padding: 15px 0 60px;
+    }
+
+    .page-header {
+        margin-bottom: 30px;
+    }
+
+    .events-page h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .page-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .event-card {
+        padding: 24px 18px;
+        border-radius: 20px;
+    }
+
+    /* ---------- EVENT DETAILS ---------- */
+
+    .event-details-page {
+        padding: 15px 0 60px;
+    }
+
+    .event-details-card {
+        padding: 28px 18px;
+        border-radius: 24px;
+    }
+
+    .event-header {
+        gap: 12px;
+        margin-bottom: 22px;
+        padding-bottom: 20px;
+    }
+
+    .event-icon-large {
+        width: 68px;
+        height: 68px;
+        font-size: 3rem;
+        border-radius: 18px;
+    }
+
+    .event-title-wrap h1 {
+        font-size: clamp(1.5rem, 7vw, 2.1rem);
+    }
+
+    .event-description {
+        font-size: 0.86rem;
+    }
+
+    .event-info {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .info-box {
+        padding: 12px 13px;
+    }
+
+    .rules {
+        padding: 18px 17px;
+        border-radius: 16px;
+    }
+
+    .rules ul {
+        font-size: 0.82rem;
+    }
+
+    .event-cta-wrap {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .register-button,
+    .google-form-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* ---------- REGISTRATION ---------- */
+
+    .registration-page {
+        padding: 15px 0 70px;
+    }
+
+    .registration-card {
+        padding: 28px 18px;
+        border-radius: 24px;
+    }
+
+    .registration-card h1 {
+        font-size: clamp(1.6rem, 7vw, 2.2rem);
+    }
+
+    .registration-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .reg-filter-chips {
+        gap: 6px;
+    }
+
+    .reg-chip {
+        font-size: 0.7rem;
+        padding: 6px 11px;
+    }
+
+    .form-select {
+        font-size: 0.9rem;
+        padding: 14px 42px 14px 44px;
+    }
+
+    .selected-event-card {
+        padding: 20px 16px;
+        border-radius: 18px;
+    }
+
+    .selected-event-head {
+        gap: 12px;
+    }
+
+    .selected-event-title {
+        font-size: 1.15rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    .site-footer {
+        width: calc(100% - 24px);
+        margin: 25px auto 25px;
+        padding: 26px 14px;
+    }
+
+    .footer-brand {
+        font-size: 0.85rem;
+    }
+
+    .footer-sub,
+    .footer-dates {
+        font-size: 0.74rem;
+    }
+}
