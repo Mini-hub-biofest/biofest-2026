@@ -4,51 +4,114 @@ const HUNT_CONFIG = {
 
   start: "start",
 
+  settings: {
+    rememberTeam: true,
+    allowBack: false
+  },
+
   clues: {
+
+    // =========================
+    // STARTING QUESTION
+    // =========================
 
     start: {
       type: "question",
+
       question: "Which path will you take?",
-      description: "Choose your answer carefully. Each answer leads to a different location.",
+
       answers: [
         {
-          text: "A — Follow the books",
+          text: "Follow the books",
           next: "library"
         },
+
         {
-          text: "B — Follow the games",
+          text: "Follow the games",
           next: "ground"
         },
+
         {
-          text: "C — Follow the crowd",
+          text: "Follow the crowd",
           next: "auditorium"
         }
       ]
     },
 
+
+    // =========================
+    // LIBRARY CLUE
+    // =========================
+
     library: {
       type: "clue",
+
       title: "CLUE UNLOCKED",
-      clue: "Knowledge surrounds you, but your next destination is not inside a book.",
-      location: "Find the next QR code near the Library.",
-      nextQR: "library-qr"
+
+      clue:
+        "Thousands of stories rest silently behind my walls. " +
+        "I have no voice, yet I speak through every page. " +
+        "Find the place where knowledge waits to be opened.",
+
+      location:
+        "Find the next BIOFEST QR code at the place described by this clue.",
+
+      qrId: "QR-02"
     },
+
+
+    // =========================
+    // GROUND CLUE
+    // =========================
 
     ground: {
       type: "clue",
+
       title: "CLUE UNLOCKED",
-      clue: "Where competition, speed and cheers come together, your next path awaits.",
-      location: "Find the next QR code near the Ground.",
-      nextQR: "ground-qr"
+
+      clue:
+        "Where competition, speed and cheers come together, " +
+        "your next path awaits.",
+
+      location:
+        "Find the next BIOFEST QR code at the place described by this clue.",
+
+      qrId: "QR-03"
     },
+
+
+    // =========================
+    // AUDITORIUM CLUE
+    // =========================
 
     auditorium: {
       type: "clue",
+
       title: "CLUE UNLOCKED",
-      clue: "Look for the place where voices, performances and celebrations fill the air.",
-      location: "Find the next QR code near the Auditorium.",
-      nextQR: "auditorium-qr"
+
+      clue:
+        "Look for the place where voices, performances " +
+        "and celebrations fill the air.",
+
+      location:
+        "Find the next BIOFEST QR code at the place described by this clue.",
+
+      qrId: "QR-04"
     }
 
+  },
+
+  // =========================
+  // FINAL SCREEN
+  // =========================
+
+  finish: {
+    title: "TREASURE FOUND",
+
+    message:
+      "Congratulations! You have completed the BIOFEST Treasure Hunt.",
+
+    instruction:
+      "Report to the BIOFEST Treasure Hunt desk."
   }
 };
