@@ -181,7 +181,7 @@ const events = {
         teamSize: 1,
         type: "Alumni Delegate Pass",
         listPage: "register",
-        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLScSIRNnWZpU3_XJrtnYO19B8g9UVNioEcl6VfnQCmdZjmuL9Q/viewform"
+        googleForm: "https://forms.gle/tZvgMBWzz9RehUGi6"
     },
 
     stalls: {
@@ -193,7 +193,7 @@ const events = {
         teamSize: 1,
         type: "Vendor & Stall Booking",
         listPage: "register",
-        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLScSIRNnWZpU3_XJrtnYO19B8g9UVNioEcl6VfnQCmdZjmuL9Q/viewform"
+        googleForm: "https://forms.gle/L4FHENaAKXCnKgkK8"
     }
 };
 
