@@ -67,23 +67,23 @@ const events = {
     quiz: {
         key: "quiz",
         icon: "💡",
-        name: "Science & Quiz",
+        name: "Quiz",
         description: "Test your scientific knowledge, analytical reasoning, and rapid-fire trivia acumen in this university quiz championship.",
-        team: "Solo / Duo",
+        team: "Duo",
         teamSize: 2,
-        type: "Solo / Duo Registration",
+        type: "Duo Registration",
         listPage: "science",
-        googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfBpz-ekiHQkRY7Tn4RvEH2lT7GmWAJNAQ95mxa_8w8FqKT8A/viewform"
+        googleForm: "https://forms.gle/o9QVixTNPk3pU2PP8"
     },
 
     pitching: {
         key: "pitching",
         icon: "💡",
-        name: "Scientific & Pitching",
+        name: "Scientific Pitching",
         description: "Pitch your revolutionary scientific concepts, bio-tech startups, and research innovations with stellar presentation skills.",
-        team: "Solo / Duo",
-        teamSize: 2,
-        type: "Solo / Duo Registration",
+        team: "Solo",
+        teamSize: 1,
+        type: "Solo Registration",
         listPage: "science",
         googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfBpz-ekiHQkRY7Tn4RvEH2lT7GmWAJNAQ95mxa_8w8FqKT8A/viewform"
     },
