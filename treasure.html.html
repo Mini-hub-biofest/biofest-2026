@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#08090d">
+  <title>BIOFEST Treasure Hunt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-orb orb-one"></div>
+  <div class="bg-orb orb-two"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" onclick="return goHome()">BIOFEST <span>HUNT</span></a>
+      <div id="teamBadge" class="team-badge hidden"></div>
+    </header>
+
+    <section id="startScreen" class="screen start-screen">
+      <div class="eyebrow">🧬 BIOFEST 2026</div>
+      <h1 id="huntTitle">TREASURE HUNT</h1>
+      <p id="huntSubtitle">Every answer opens a different path.</p>
+
+      <div class="glass-card start-card">
+        <label for="teamName">TEAM NAME</label>
+        <input id="teamName" maxlength="40" autocomplete="off" placeholder="Enter your team name">
+        <button class="primary-btn" onclick="startHunt()">START THE HUNT <span>→</span></button>
+        <p class="tiny">Demo mode — all clues and routes are editable in <code>config.js</code>.</p>
+      </div>
+    </section>
+
+    <section id="clueScreen" class="screen hidden">
+      <div class="progress-row">
+        <div id="progressText">CLUE 1</div>
+        <div id="routeText">Choose carefully</div>
+      </div>
+
+      <div class="progress-track"><div id="progressBar"></div></div>
+
+      <article class="glass-card clue-card">
+        <div class="clue-number" id="clueNumber">01</div>
+        <div class="eyebrow" id="clueEyebrow">CLUE</div>
+        <h2 id="clueTitle"></h2>
+        <p class="question" id="question"></p>
+
+        <div id="hintBox" class="hint-box hidden"></div>
+        <div id="locationBox" class="location-box hidden"></div>
+
+        <div id="answers" class="answers"></div>
+      </article>
+
+      <button id="backBtn" class="text-btn hidden" onclick="goBack()">← Previous clue</button>
+    </section>
+
+    <section id="finishScreen" class="screen hidden finish-screen">
+      <div class="finish-icon">🏆</div>
+      <div class="eyebrow">ROUTE COMPLETE</div>
+      <h1 id="finishTitle"></h1>
+      <p id="finishMessage"></p>
+      <div class="glass-card finish-card">
+        <p id="finishInstruction"></p>
+      </div>
+      <button class="primary-btn" onclick="restart()">START AGAIN</button>
+    </section>
+
+    <footer>Made for BIOFEST • Treasure Hunt</footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
