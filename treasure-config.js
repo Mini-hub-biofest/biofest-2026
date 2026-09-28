@@ -20,6 +20,28 @@ const HUNT_CONFIG = {
 
       title: "THE FIRST TRAIL",
 
+      // 🔐 QR-01 LOCK QUESTION
+      lockQuestion: "What is the powerhouse of the cell?",
+
+      lockAnswers: [
+        {
+          text: "Nucleus",
+          correct: false
+        },
+        {
+          text: "Mitochondria",
+          correct: true
+        },
+        {
+          text: "Ribosome",
+          correct: false
+        },
+        {
+          text: "Cell membrane",
+          correct: false
+        }
+      ],
+
       question:
         "The hunt begins here. Choose your path carefully.",
 
@@ -127,6 +149,28 @@ const HUNT_CONFIG = {
 
       title: "THE SECOND TRAIL",
 
+      // 🔐 QR-02 LOCK QUESTION
+      lockQuestion: "Which organ pumps blood throughout the human body?",
+
+      lockAnswers: [
+        {
+          text: "Lungs",
+          correct: false
+        },
+        {
+          text: "Brain",
+          correct: false
+        },
+        {
+          text: "Heart",
+          correct: true
+        },
+        {
+          text: "Kidney",
+          correct: false
+        }
+      ],
+
       question:
         "You found the second checkpoint. " +
         "The trail continues. Choose carefully.",
@@ -233,6 +277,28 @@ const HUNT_CONFIG = {
 
       title: "THE THIRD TRAIL",
 
+      // 🔐 QR-03 LOCK QUESTION
+      lockQuestion: "What is the largest planet in our solar system?",
+
+      lockAnswers: [
+        {
+          text: "Earth",
+          correct: false
+        },
+        {
+          text: "Mars",
+          correct: false
+        },
+        {
+          text: "Jupiter",
+          correct: true
+        },
+        {
+          text: "Saturn",
+          correct: false
+        }
+      ],
+
       question:
         "Three checkpoints remain between you and the treasure. " +
         "Which path will you choose now?",
@@ -337,6 +403,28 @@ const HUNT_CONFIG = {
       type: "question",
 
       title: "THE FOURTH TRAIL",
+
+      // 🔐 QR-04 LOCK QUESTION
+      lockQuestion: "How many chambers does the human heart have?",
+
+      lockAnswers: [
+        {
+          text: "2",
+          correct: false
+        },
+        {
+          text: "3",
+          correct: false
+        },
+        {
+          text: "4",
+          correct: true
+        },
+        {
+          text: "5",
+          correct: false
+        }
+      ],
 
       question:
         "The trail is getting shorter. " +
@@ -445,6 +533,28 @@ const HUNT_CONFIG = {
 
       title: "THE FIFTH TRAIL",
 
+      // 🔐 QR-05 LOCK QUESTION
+      lockQuestion: "Which gas do humans need to breathe to survive?",
+
+      lockAnswers: [
+        {
+          text: "Carbon dioxide",
+          correct: false
+        },
+        {
+          text: "Oxygen",
+          correct: true
+        },
+        {
+          text: "Nitrogen",
+          correct: false
+        },
+        {
+          text: "Hydrogen",
+          correct: false
+        }
+      ],
+
       question:
         "Only two checkpoints remain after this one. " +
         "Which clue will you follow?",
@@ -550,6 +660,28 @@ const HUNT_CONFIG = {
 
       title: "THE FINAL TRAIL",
 
+      // 🔐 QR-06 LOCK QUESTION
+      lockQuestion: "What is the basic unit of life?",
+
+      lockAnswers: [
+        {
+          text: "Tissue",
+          correct: false
+        },
+        {
+          text: "Organ",
+          correct: false
+        },
+        {
+          text: "Cell",
+          correct: true
+        },
+        {
+          text: "Atom",
+          correct: false
+        }
+      ],
+
       question:
         "One final checkpoint stands between you and the treasure. " +
         "Choose your final path.",
@@ -654,6 +786,28 @@ const HUNT_CONFIG = {
       type: "question",
 
       title: "THE TREASURE AWAITS",
+
+      // 🔐 QR-07 LOCK QUESTION
+      lockQuestion: "What is the chemical symbol for water?",
+
+      lockAnswers: [
+        {
+          text: "CO2",
+          correct: false
+        },
+        {
+          text: "O2",
+          correct: false
+        },
+        {
+          text: "H2O",
+          correct: true
+        },
+        {
+          text: "NaCl",
+          correct: false
+        }
+      ],
 
       question:
         "You have reached the final checkpoint. " +
