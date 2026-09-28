@@ -15,7 +15,17 @@ const events = {
         listPage: "sports",
         googleForm: "https://docs.google.com/forms/d/e/1FAIpQLScSIRNnWZpU3_XJrtnYO19B8g9UVNioEcl6VfnQCmdZjmuL9Q/viewform"
     },
-
+    badmintondoubles: {
+        key: "badmintondoubles",
+        icon: "🏸",
+        name: "Badminton Doubles",
+        description: "Fast-paced doubles badminton showdown focused on skill, teamwork, speed, and precision.",
+        team: "2 Players",
+        teamSize: 2,
+        type: "Doubles Registration",
+        listPage: "sports",
+        googleForm: "https://forms.gle/bfaososxyqevxmRE6"
+    },
     armwrestling: {
         key: "armwrestling",
         icon: "💪",
