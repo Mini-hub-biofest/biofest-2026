@@ -818,9 +818,13 @@
 
         <a href="#/" class="back-button">
 
-            <span class="back-arrow">←</span>
+            <span class="back-arrow">
+                ←
+            </span>
 
-            <span>Back to Home</span>
+            <span>
+                Back to Home
+            </span>
 
         </a>
 
@@ -948,9 +952,13 @@
 
         <a href="#/" class="back-button">
 
-            <span class="back-arrow">←</span>
+            <span class="back-arrow">
+                ←
+            </span>
 
-            <span>Back to Home</span>
+            <span>
+                Back to Home
+            </span>
 
         </a>
 
@@ -975,7 +983,37 @@
         <div class="events-grid">
 
 
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScG9iR9FJ6pJf8J6fXqG8rT8LQJ3F0qJZx4x0p5mK2qQ9w/viewform?usp=header"
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSckrLPGiyUzCNYEx1NV2AWU3Z7ieTf8AYRkliqd78-Z8u8izw/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="event-card cultural-card spotlight-card">
+
+                <div class="card-glow-bg"></div>
+
+                <div class="event-icon">
+                    💃
+                </div>
+
+                <h2>
+                    Dance Showdown
+                </h2>
+
+                <p>
+                    Solo, &amp; squad dance battle
+                </p>
+
+                <span class="event-pill">
+                    Solo / Group (5)
+                </span>
+
+                <span class="event-btn">
+                    Register →
+                </span>
+
+            </a>
+
+
+            <a href="https://forms.gle/Lno8MfxVzyGK3SJY6"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="event-card cultural-card spotlight-card">
@@ -987,15 +1025,15 @@
                 </div>
 
                 <h2>
-                    SciGlam
+                    Fashion Show
                 </h2>
 
                 <p>
-                    Celebrating fashion, confidence &amp; creativity
+                    Solo runway couture &amp; styling
                 </p>
 
                 <span class="event-pill">
-                    Individual
+                    Solo
                 </span>
 
                 <span class="event-btn">
@@ -1005,7 +1043,7 @@
             </a>
 
 
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1jQmYJ6m7qM4pQ2fY8kT4wR9sV3nL6xA5cB7dE8fG9h/viewform?usp=header"
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRVAAByJXTo5ADsXXPh4sJySP1tydR9jRfQrnBPBuMM4rIzg/viewform?usp=publish-editor"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="event-card cultural-card spotlight-card">
@@ -1013,19 +1051,19 @@
                 <div class="card-glow-bg"></div>
 
                 <div class="event-icon">
-                    🎵
+                    🎤
                 </div>
 
                 <h2>
-                    SciRhythm
+                    Singing
                 </h2>
 
                 <p>
-                    Celebrating music, rhythm &amp; performance
+                    Solo Singing performance
                 </p>
 
                 <span class="event-pill">
-                    Individual / Duo
+                    Solo
                 </span>
 
                 <span class="event-btn">
@@ -1033,38 +1071,633 @@
                 </span>
 
             </a>
-
-
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeK5gL9mN2pQ7rT4vW8xY3zA6bC1dE5fG9hJ0kL2mN4/viewform?usp=header"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="event-card cultural-card spotlight-card">
-
-                <div class="card-glow-bg"></div>
-
-                <div class="event-icon">
-                    🎨
-                </div>
-
-                <h2>
-                    Arts
-                </h2>
-
-                <p>
-                    Creativity, imagination &amp; artistic expression
-                </p>
-
-                <span class="event-pill">
-                    Individual
-                </span>
-
-                <span class="event-btn">
-                    Register →
-                </span>
-
-            </a>
-
 
         </div>
 
     </main>
+
+
+    <!-- ========================= -->
+    <!-- EVENT DETAILS VIEW -->
+    <!-- ========================= -->
+
+    <main class="view event-details-page" id="view-event" data-view="event">
+
+        <a href="#/sports" class="back-button" id="event-back-button">
+
+            <span class="back-arrow">
+                ←
+            </span>
+
+            <span>
+                Back to Events
+            </span>
+
+        </a>
+
+
+        <div class="event-details-card spotlight-card">
+
+            <div class="card-glow-bg"></div>
+
+
+            <div class="event-header">
+
+                <div class="event-icon-large" id="event-icon">
+                    🏆
+                </div>
+
+                <div class="event-title-wrap">
+
+                    <span class="event-category-badge" id="event-category-badge">
+                        TOURNAMENT
+                    </span>
+
+                    <h1 id="event-name">
+                        Event Name
+                    </h1>
+
+                    <p class="event-description" id="event-description">
+                        Description of the tournament.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="event-info">
+
+                <div class="info-box">
+
+                    <div class="info-icon">
+                        👥
+                    </div>
+
+                    <div class="info-text">
+
+                        <strong>
+                            Team Size
+                        </strong>
+
+                        <span id="event-team">
+                            5 Players
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-box highlight-prize">
+
+                    <div class="info-icon">
+                        🏆
+                    </div>
+
+                    <div class="info-text">
+
+                        <strong>
+                            Recognition
+                        </strong>
+
+                        <span>
+                            Trophy &amp; Certificates
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <div class="info-icon">
+                        📅
+                    </div>
+
+                    <div class="info-text">
+
+                        <strong>
+                            Date
+                        </strong>
+
+                        <span>
+                            BIOFEST 1.0 • 13–14 Oct (Starts 9:00 AM)
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <div class="info-icon">
+                        🧬
+                    </div>
+
+                    <div class="info-text">
+
+                        <strong>
+                            Organized By
+                        </strong>
+
+                        <span>
+                            Department of Applied Biology
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <div class="info-icon">
+                        📍
+                    </div>
+
+                    <div class="info-text">
+
+                        <strong>
+                            Venue
+                        </strong>
+
+                        <span>
+                            USTM Campus
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <div class="info-icon">
+                        🛡️
+                    </div>
+
+                    <div class="info-text">
+
+                        <strong>
+                            Eligibility
+                        </strong>
+
+                        <span>
+                            College &amp; University Students
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="rules">
+
+                <h2>
+                    Tournament Guidelines
+                </h2>
+
+                <ul>
+
+                    <li>
+                        Participants must carry a valid University/College ID card on event day.
+                    </li>
+
+                    <li>
+                        Official match schedules &amp; fixture draws will be communicated via WhatsApp group.
+                    </li>
+
+                    <li>
+                        Decision of the referees/organizers is final and binding in all match disputes.
+                    </li>
+
+                    <li>
+                        Fair play and sportsmanship are strictly enforced. Unfair conduct will lead to disqualification.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="event-cta-wrap">
+
+                <a href="#"
+                    id="register-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="register-button shimmer-btn">
+
+                    <span>
+                        REGISTER VIA GOOGLE FORM
+                    </span>
+
+                    <span class="btn-arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+
+                <a href="#"
+                    id="google-form-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="google-form-btn">
+
+                    <span>
+                        Direct Google Form ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- REGISTRATION VIEW -->
+    <!-- ========================= -->
+
+    <main class="view registration-page" id="view-register" data-view="register">
+
+        <a href="#/" id="back-button" class="back-button">
+
+            <span class="back-arrow">
+                ←
+            </span>
+
+            <span>
+                Back
+            </span>
+
+        </a>
+
+
+        <div class="registration-card spotlight-card">
+
+            <div class="card-glow-bg"></div>
+
+
+            <div class="registration-header">
+
+                <span class="registration-badge">
+                    🧬 DEPARTMENT OF APPLIED BIOLOGY • BIOFEST 1.0
+                </span>
+
+                <h1 id="registration-event-name">
+                    Festival Registration
+                </h1>
+
+                <p class="registration-subtitle" id="registration-type">
+                    Select an event or portal below to proceed directly to the Google Form
+                </p>
+
+            </div>
+
+
+            <!-- REGISTRATION FILTER PILLS -->
+
+            <div class="reg-filter-bar">
+
+                <span class="filter-label">
+                    Quick Filter:
+                </span>
+
+                <div class="reg-filter-chips">
+
+                    <a href="#/register/futsal" class="reg-chip">
+                        🏆 Sports
+                    </a>
+
+                    <a href="#/register/bgmi" class="reg-chip">
+                        🎮 Esports
+                    </a>
+
+                    <a href="#/register/quiz" class="reg-chip">
+                        🔬 Science
+                    </a>
+
+                    <a href="#/register/dance" class="reg-chip">
+                        🎭 Cultural
+                    </a>
+
+                    <a href="#/register/alumni" class="reg-chip chip-alumni">
+                        🎓 Alumni Pass
+                    </a>
+
+                    <a href="#/register/stalls" class="reg-chip chip-stalls">
+                        🎪 Stall Booking
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- EVENT SELECTOR -->
+
+            <div class="form-group" id="event-select-group">
+
+                <label for="event-select">
+                    Choose Your Tournament / Event / Portal *
+                </label>
+
+                <div class="input-wrap">
+
+                    <span class="input-icon">
+                        🎯
+                    </span>
+
+                    <select id="event-select"
+                        name="event-select"
+                        class="form-select"
+                        required>
+
+                        <option value="">
+                            -- Select an Event to Register --
+                        </option>
+
+
+                        <optgroup label="🏆 Sports Arena">
+
+                            <option value="futsal">
+                                ⚽ Futsal (5 Players)
+                            </option>
+
+                            <option value="armwrestling">
+                                💪 Arm Wrestling (Individual)
+                            </option>
+
+                            <option value="treasurehunt">
+                                🎯 Treasure Hunt (5 Players)
+                            </option>
+
+                        </optgroup>
+
+
+                        <optgroup label="🎮 Esports Arena">
+
+                            <option value="bgmi">
+                                🎯 BGMI Championship (Squad - 4)
+                            </option>
+
+                            <option value="efootball">
+                                ⚽ eFootball Open (Individual)
+                            </option>
+
+                        </optgroup>
+
+
+                        <optgroup label="🔬 Science Arena">
+
+                            <option value="quiz">
+                                💡 Quiz (Duo)
+                            </option>
+
+                            <option value="pitching">
+                                🦄 Scientific &amp; Pitching (Solo)
+                            </option>
+
+                            <option value="foodwaste">
+                                ♻️ Food Waste Innovation &amp; Utilization (Solo / Duo)
+                            </option>
+
+                            <option value="modelmaking">
+                                🔬 Science Model Making (Solo / Duo)
+                            </option>
+
+                            <option value="poster">
+                                📊 Scientific Poster Presentation (Solo / Duo)
+                            </option>
+
+                        </optgroup>
+
+
+                        <optgroup label="🎭 Cultural Arena">
+
+                            <option value="dance">
+                                💃 Dance Showdown (Solo / Duo / Group 5)
+                            </option>
+
+                            <option value="fashionshow">
+                                👠 Fashion Show (Solo)
+                            </option>
+
+                            <option value="singing">
+                                🎤 Singing (Solo / Group)
+                            </option>
+
+                        </optgroup>
+
+
+                        <optgroup label="🎓 Alumni Network">
+
+                            <option value="alumni">
+                                🎓 Alumni Registration / Pass
+                            </option>
+
+                        </optgroup>
+
+
+                        <optgroup label="🎪 Stalls &amp; Exhibitors">
+
+                            <option value="stalls">
+                                🎪 Food &amp; Commercial Stall Booking
+                            </option>
+
+                        </optgroup>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- DYNAMIC EVENT REDIRECT CONTAINER -->
+
+            <div id="event-redirect-container"
+                class="event-redirect-container"
+                style="display: none;">
+
+                <div class="selected-event-card">
+
+                    <div class="selected-event-head">
+
+                        <span class="selected-event-icon"
+                            id="selected-event-icon">
+                            🏆
+                        </span>
+
+                        <div>
+
+                            <h2 id="selected-event-title"
+                                class="selected-event-title">
+                                Event Name
+                            </h2>
+
+                            <span id="selected-event-arena"
+                                class="selected-event-badge">
+                                Sports Arena
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="selected-event-meta-grid">
+
+                        <div class="selected-meta-item">
+
+                            <span class="selected-meta-label">
+                                Team Format
+                            </span>
+
+                            <span class="selected-meta-val"
+                                id="selected-event-team">
+                                5 Players
+                            </span>
+
+                        </div>
+
+
+                        <div class="selected-meta-item">
+
+                            <span class="selected-meta-label">
+                                Registration
+                            </span>
+
+                            <span class="selected-meta-val highlight-meta"
+                                id="selected-event-status">
+                                Online Form
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="selected-event-notice">
+
+                        <span class="notice-icon">
+                            ℹ️
+                        </span>
+
+                        <p class="selected-event-desc"
+                            id="selected-event-desc">
+
+                            Official team roster submission and registration verification is conducted via Google
+                            Forms. Click the button below to complete your registration.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="redirect-actions">
+
+                        <a href="#"
+                            id="main-google-form-btn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="submit-registration shimmer-btn">
+
+                            <span class="btn-text">
+                                OPEN GOOGLE FORM &amp; REGISTER NOW
+                            </span>
+
+                            <span class="btn-arrow">
+                                ↗
+                            </span>
+
+                        </a>
+
+                        <p class="redirect-subtext">
+                            Redirects directly to the official Google Form in a new tab
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROMPT WHEN NO EVENT IS SELECTED YET -->
+
+            <div id="no-event-prompt"
+                class="no-event-prompt">
+
+                <div class="prompt-icon">
+                    📋
+                </div>
+
+                <h3>
+                    Choose an Event or Portal Above
+                </h3>
+
+                <p>
+                    Pick any of the Sports, Esports, Science, Cultural events, Alumni Pass, or Stall Booking from the
+                    dropdown to access its official Google Form link.
+                </p>
+
+
+                <!-- Quick Category Buttons -->
+
+                <div class="quick-category-links">
+
+                    <a href="#/sports"
+                        class="quick-cat-btn">
+                        🏆 View Sports
+                    </a>
+
+                    <a href="#/esports"
+                        class="quick-cat-btn">
+                        🎮 View Esports
+                    </a>
+
+                    <a href="#/science"
+                        class="quick-cat-btn">
+                        🔬 View Science
+                    </a>
+
+                    <a href="#/cultural"
+                        class="quick-cat-btn">
+                        🎭 View Cultural
+                    </a>
+
+                    <a href="#/register/alumni"
+                        class="quick-cat-btn">
+                        🎓 Alumni Pass
+                    </a>
+
+                    <a href="#/register/stalls"
+                        class="quick-cat-btn">
+                        🎪 Stall Booking
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
