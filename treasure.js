@@ -10,25 +10,42 @@ const settings = HUNT_CONFIG.settings || {
   allowBack: false
 };
 
+
+// ==================================================
+// INITIALIZE
+// ==================================================
+
 function init() {
   $("huntTitle").textContent = HUNT_CONFIG.title;
   $("huntSubtitle").textContent = HUNT_CONFIG.subtitle;
 
   if (settings.rememberTeam) {
-    const saved = localStorage.getItem("biofest_hunt_team");
+    const saved =
+      localStorage.getItem("biofest_hunt_team");
 
     if (saved && $("teamName")) {
       $("teamName").value = saved;
     }
   }
 
-  // QR / direct clue support
-  const params = new URLSearchParams(location.search);
-  const directClue = params.get("clue");
+  // ================================================
+  // QR / DIRECT CLUE SUPPORT
+  // ================================================
 
-  if (directClue && HUNT_CONFIG.clues[directClue]) {
+  const params =
+    new URLSearchParams(location.search);
+
+  const directClue =
+    params.get("clue");
+
+  if (
+    directClue &&
+    HUNT_CONFIG.clues[directClue]
+  ) {
     teamName =
-      localStorage.getItem("biofest_hunt_team") || "Team";
+      localStorage.getItem(
+        "biofest_hunt_team"
+      ) || "Team";
 
     showTeam();
 
@@ -39,10 +56,17 @@ function init() {
   }
 }
 
-function startHunt() {
-  const value = $("teamName").value.trim();
 
-  teamName = value || "Team";
+// ==================================================
+// START HUNT
+// ==================================================
+
+function startHunt() {
+  const value =
+    $("teamName").value.trim();
+
+  teamName =
+    value || "Team";
 
   if (settings.rememberTeam) {
     localStorage.setItem(
@@ -54,105 +78,344 @@ function startHunt() {
   historyStack = [];
 
   showTeam();
-  showClue(HUNT_CONFIG.start, false);
+
+  // IMPORTANT:
+  // Start Hunt opens the normal first question
+  // WITHOUT the QR lock.
+  showClue(
+    HUNT_CONFIG.start,
+    false
+  );
 }
+
+
+// ==================================================
+// SHOW TEAM
+// ==================================================
 
 function showTeam() {
   if (!$("teamBadge")) return;
 
-  $("teamBadge").textContent = teamName;
-  $("teamBadge").classList.remove("hidden");
+  $("teamBadge").textContent =
+    teamName;
+
+  $("teamBadge").classList.remove(
+    "hidden"
+  );
 }
 
 
-/* =====================================================
-   🔐 QR QUESTION LOCK
-   ===================================================== */
+// ==================================================
+// QR QUESTION LOCK
+// ==================================================
 
 function showClueLock(id) {
 
-  const clue = HUNT_CONFIG.clues[id];
+  const clue =
+    HUNT_CONFIG.clues[id];
 
   if (!clue) {
-    return showError("Clue not found: " + id);
+    return showError(
+      "Clue not found: " + id
+    );
   }
 
   currentId = id;
 
-  $("startScreen").classList.add("hidden");
-  $("finishScreen").classList.add("hidden");
-  $("clueScreen").classList.remove("hidden");
+  $("startScreen").classList.add(
+    "hidden"
+  );
+
+  $("finishScreen").classList.add(
+    "hidden"
+  );
+
+  $("clueScreen").classList.remove(
+    "hidden"
+  );
+
+
+  // ================================================
+  // CLUE NUMBER
+  // ================================================
 
   $("clueNumber").textContent =
     clue.number
       ? String(clue.number).padStart(2, "0")
       : "";
 
+
+  // ================================================
+  // TITLE
+  // ================================================
+
   $("clueTitle").textContent =
-    clue.title || "🔐 Locked Clue";
+    clue.title ||
+    "🔐 Locked Clue";
+
+
+  // ================================================
+  // STATUS
+  // ================================================
 
   $("progressText").textContent =
     "LOCKED";
 
+
   $("routeText").textContent =
     "Answer correctly to unlock this clue";
+
+
+  // ================================================
+  // LOCK QUESTION
+  // ================================================
 
   $("question").textContent =
     clue.lockQuestion ||
     "Answer the question to unlock this clue.";
 
-  $("hintBox").classList.add("hidden");
-  $("locationBox").classList.add("hidden");
 
-  const answers = $("answers");
+  // ================================================
+  // HIDE NORMAL CLUE ELEMENTS
+  // ================================================
+
+  $("hintBox").classList.add(
+    "hidden"
+  );
+
+  $("locationBox").classList.add(
+    "hidden"
+  );
+
+
+  // ================================================
+  // ANSWER AREA
+  // ================================================
+
+  const answers =
+    $("answers");
 
   answers.innerHTML = "";
 
-  /*
-    If no lock question has been added,
-    automatically unlock the clue.
-  */
+
+  // ================================================
+  // IF NO LOCK QUESTION EXISTS
+  // ================================================
 
   if (!clue.lockQuestion) {
     unlockClue(id);
     return;
   }
 
-  const lockAnswers = clue.lockAnswers || [];
 
-  lockAnswers.forEach((answer, index) => {
+  // ================================================
+  // WRITTEN ANSWER INPUT
+  // ================================================
 
-    const button = document.createElement("button");
+  const input =
+    document.createElement("input");
 
-    button.className = "answer-btn";
+  input.type = "text";
 
-    button.innerHTML = `
-      <span class="letter">
-        ${String.fromCharCode(65 + index)}
-      </span>
+  input.id =
+    "lockAnswerInput";
 
-      <span>${escapeHtml(answer.text)}</span>
-    `;
+  input.placeholder =
+    "Write your answer here...";
 
-    button.addEventListener("click", () => {
+  input.autocomplete =
+    "off";
 
-      if (answer.correct === true) {
-        unlockClue(id);
-      } else {
 
-        button.classList.add("wrong-answer");
+  // Input styling
+  input.style.width =
+    "100%";
 
-        button.disabled = true;
+  input.style.padding =
+    "15px";
 
-        setTimeout(() => {
-          button.classList.remove("wrong-answer");
-        }, 800);
+  input.style.marginTop =
+    "15px";
+
+  input.style.marginBottom =
+    "12px";
+
+  input.style.borderRadius =
+    "10px";
+
+  input.style.border =
+    "1px solid rgba(255,255,255,0.25)";
+
+  input.style.background =
+    "rgba(0,0,0,0.35)";
+
+  input.style.color =
+    "white";
+
+  input.style.fontSize =
+    "16px";
+
+  input.style.boxSizing =
+    "border-box";
+
+  input.style.outline =
+    "none";
+
+
+  answers.appendChild(
+    input
+  );
+
+
+  // ================================================
+  // UNLOCK BUTTON
+  // ================================================
+
+  const button =
+    document.createElement("button");
+
+  button.className =
+    "answer-btn";
+
+  button.innerHTML = `
+    <span class="letter">🔓</span>
+    <span>UNLOCK CLUE</span>
+  `;
+
+
+  // ================================================
+  // CHECK ANSWER
+  // ================================================
+
+  button.addEventListener(
+    "click",
+    () => {
+
+      const userAnswer =
+        input.value
+          .trim()
+          .toLowerCase();
+
+
+      // Empty answer
+      if (!userAnswer) {
+
+        input.focus();
+
+        return;
       }
 
-    });
 
-    answers.appendChild(button);
-  });
+      // ============================================
+      // FIND CORRECT ANSWER
+      // ============================================
+
+      const lockAnswers =
+        clue.lockAnswers || [];
+
+      const correctAnswer =
+        lockAnswers.find(
+          answer =>
+            answer.correct === true
+        );
+
+
+      // No correct answer configured
+      if (!correctAnswer) {
+
+        return showError(
+          "No correct answer has been configured for this clue."
+        );
+      }
+
+
+      const correctText =
+        correctAnswer.text
+          .trim()
+          .toLowerCase();
+
+
+      // ============================================
+      // CORRECT ANSWER
+      // ============================================
+
+      if (
+        userAnswer ===
+        correctText
+      ) {
+
+        input.disabled =
+          true;
+
+        button.disabled =
+          true;
+
+        // 🔓 OPEN NORMAL CLUE
+        unlockClue(id);
+
+      }
+
+
+      // ============================================
+      // WRONG ANSWER
+      // ============================================
+
+      else {
+
+        input.value =
+          "";
+
+        input.placeholder =
+          "❌ Wrong answer — try again";
+
+        input.focus();
+
+        input.style.border =
+          "1px solid red";
+
+
+        setTimeout(
+          () => {
+
+            input.style.border =
+              "1px solid rgba(255,255,255,0.25)";
+
+            input.placeholder =
+              "Write your answer here...";
+
+          },
+          1000
+        );
+      }
+    }
+  );
+
+
+  answers.appendChild(
+    button
+  );
+
+
+  // ================================================
+  // ENTER KEY ALSO SUBMITS ANSWER
+  // ================================================
+
+  input.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (
+        event.key === "Enter"
+      ) {
+        button.click();
+      }
+    }
+  );
+
+
+  // ================================================
+  // SCROLL TO TOP
+  // ================================================
 
   window.scrollTo({
     top: 0,
@@ -161,139 +424,253 @@ function showClueLock(id) {
 }
 
 
-/* =====================================================
-   🔓 UNLOCK CLUE
-   ===================================================== */
+// ==================================================
+// UNLOCK CLUE
+// ==================================================
 
 function unlockClue(id) {
 
   unlockedClues.add(id);
 
-  const clue = HUNT_CONFIG.clues[id];
+  const clue =
+    HUNT_CONFIG.clues[id];
 
   if (!clue) return;
 
-  showClue(id, false);
+  // Open the ORIGINAL question/clue
+  showClue(
+    id,
+    false
+  );
 }
 
 
-/* =====================================================
-   NORMAL CLUE DISPLAY
-   ===================================================== */
+// ==================================================
+// NORMAL CLUE DISPLAY
+// ==================================================
 
-function showClue(id, push = true) {
+function showClue(
+  id,
+  push = true
+) {
 
-  const clue = HUNT_CONFIG.clues[id];
+  const clue =
+    HUNT_CONFIG.clues[id];
+
 
   if (!clue) {
-    return showError("Clue not found: " + id);
+
+    return showError(
+      "Clue not found: " + id
+    );
   }
 
-  if (push && currentId) {
-    historyStack.push(currentId);
+
+  // ================================================
+  // HISTORY
+  // ================================================
+
+  if (
+    push &&
+    currentId
+  ) {
+    historyStack.push(
+      currentId
+    );
   }
 
-  currentId = id;
 
-  $("startScreen").classList.add("hidden");
-  $("finishScreen").classList.add("hidden");
-  $("clueScreen").classList.remove("hidden");
+  currentId =
+    id;
 
-  // Basic information
+
+  // ================================================
+  // SCREEN VISIBILITY
+  // ================================================
+
+  $("startScreen").classList.add(
+    "hidden"
+  );
+
+  $("finishScreen").classList.add(
+    "hidden"
+  );
+
+  $("clueScreen").classList.remove(
+    "hidden"
+  );
+
+
+  // ================================================
+  // CLUE NUMBER
+  // ================================================
+
   $("clueNumber").textContent =
     clue.number
       ? String(clue.number).padStart(2, "0")
       : "";
 
+
+  // ================================================
+  // TITLE
+  // ================================================
+
   $("clueTitle").textContent =
     clue.title || "";
+
+
+  // ================================================
+  // STATUS
+  // ================================================
 
   $("progressText").textContent =
     clue.type === "clue"
       ? "NEXT CLUE"
       : "QUESTION";
 
+
   $("routeText").textContent =
     clue.type === "clue"
       ? "Follow the clue to continue"
       : "Choose carefully";
 
-  // Question / clue text
+
+  // ================================================
+  // QUESTION / CLUE TEXT
+  // ================================================
+
   $("question").textContent =
     clue.type === "question"
       ? clue.question || ""
       : clue.clue || "";
 
-  // Hint
+
+  // ================================================
+  // HINT
+  // ================================================
+
   if (clue.hint) {
 
     $("hintBox").textContent =
       "💡 " + clue.hint;
 
-    $("hintBox").classList.remove("hidden");
+    $("hintBox").classList.remove(
+      "hidden"
+    );
 
   } else {
 
-    $("hintBox").classList.add("hidden");
+    $("hintBox").classList.add(
+      "hidden"
+    );
   }
 
-  // Location
+
+  // ================================================
+  // LOCATION
+  // ================================================
+
   if (clue.location) {
 
     $("locationBox").textContent =
       "📍 " + clue.location;
 
-    $("locationBox").classList.remove("hidden");
-
-  } else {
-
-    $("locationBox").classList.add("hidden");
-  }
-
-  // Answers
-  const answers = $("answers");
-
-  answers.innerHTML = "";
-
-  if (clue.type === "question") {
-
-    (clue.answers || []).forEach(
-      (answer, index) => {
-
-        const button =
-          document.createElement("button");
-
-        button.className =
-          "answer-btn";
-
-        button.innerHTML = `
-          <span class="letter">
-            ${String.fromCharCode(65 + index)}
-          </span>
-
-          <span>
-            ${escapeHtml(answer.text)}
-          </span>
-        `;
-
-        button.addEventListener(
-          "click",
-          () => {
-            chooseAnswer(answer);
-          }
-        );
-
-        answers.appendChild(button);
-      }
+    $("locationBox").classList.remove(
+      "hidden"
     );
 
   } else {
 
+    $("locationBox").classList.add(
+      "hidden"
+    );
+  }
+
+
+  // ================================================
+  // ANSWERS
+  // ================================================
+
+  const answers =
+    $("answers");
+
+  answers.innerHTML =
+    "";
+
+
+  // ================================================
+  // NORMAL QUESTION
+  // ================================================
+
+  if (
+    clue.type === "question"
+  ) {
+
+    (
+      clue.answers || []
+    ).forEach(
+      (
+        answer,
+        index
+      ) => {
+
+        const button =
+          document.createElement(
+            "button"
+          );
+
+        button.className =
+          "answer-btn";
+
+
+        button.innerHTML = `
+          <span class="letter">
+            ${String.fromCharCode(
+              65 + index
+            )}
+          </span>
+
+          <span>
+            ${escapeHtml(
+              answer.text
+            )}
+          </span>
+        `;
+
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            chooseAnswer(
+              answer
+            );
+
+          }
+        );
+
+
+        answers.appendChild(
+          button
+        );
+      }
+    );
+
+
+  // ================================================
+  // CLUE / LOCATION
+  // ================================================
+
+  } else {
+
     const message =
-      document.createElement("div");
+      document.createElement(
+        "div"
+      );
 
     message.className =
       "location-message";
+
 
     message.innerHTML = `
       <strong>🚶 Your next move</strong>
@@ -304,18 +681,29 @@ function showClue(id, push = true) {
       </p>
     `;
 
-    answers.appendChild(message);
+
+    answers.appendChild(
+      message
+    );
   }
 
-  // Progress bar
+
+  // ================================================
+  // PROGRESS BAR
+  // ================================================
+
   const total =
     Math.max(
-      Object.keys(HUNT_CONFIG.clues).length,
+      Object.keys(
+        HUNT_CONFIG.clues
+      ).length,
       1
     );
 
+
   const number =
     clue.number || 1;
+
 
   $("progressBar").style.width =
     Math.min(
@@ -323,13 +711,22 @@ function showClue(id, push = true) {
       (number / total) * 100
     ) + "%";
 
-  // Back button
+
+  // ================================================
+  // BACK BUTTON
+  // ================================================
+
   $("backBtn").classList.toggle(
     "hidden",
     !settings.allowBack ||
     historyStack.length === 0
   );
 
+
+  // ================================================
+  // SCROLL TOP
+  // ================================================
+
   window.scrollTo({
     top: 0,
     behavior: "smooth"
@@ -337,62 +734,101 @@ function showClue(id, push = true) {
 }
 
 
-/* =====================================================
-   NORMAL QUESTION ANSWER
-   ===================================================== */
+// ==================================================
+// CHOOSE NORMAL ANSWER
+// ==================================================
 
-function chooseAnswer(answer) {
+function chooseAnswer(
+  answer
+) {
 
-  if (!answer || !answer.next) return;
+  if (
+    !answer ||
+    !answer.next
+  ) {
+    return;
+  }
 
-  if (answer.next === "FINISH") {
+
+  // ================================================
+  // FINISH
+  // ================================================
+
+  if (
+    answer.next ===
+    "FINISH"
+  ) {
+
     return showFinish();
   }
 
-  showClue(answer.next, true);
+
+  // ================================================
+  // NEXT CLUE
+  // ================================================
+
+  showClue(
+    answer.next,
+    true
+  );
 }
 
 
-/* =====================================================
-   BACK
-   ===================================================== */
+// ==================================================
+// GO BACK
+// ==================================================
 
 function goBack() {
 
   const previous =
     historyStack.pop();
 
+
   if (previous) {
-    showClue(previous, false);
+
+    showClue(
+      previous,
+      false
+    );
   }
 }
 
 
-/* =====================================================
-   FINISH
-   ===================================================== */
+// ==================================================
+// FINISH SCREEN
+// ==================================================
 
 function showFinish() {
 
-  $("clueScreen").classList.add("hidden");
+  $("clueScreen").classList.add(
+    "hidden"
+  );
 
-  $("finishScreen").classList.remove("hidden");
+  $("finishScreen").classList.remove(
+    "hidden"
+  );
 
-  if (HUNT_CONFIG.finish) {
+
+  if (
+    HUNT_CONFIG.finish
+  ) {
 
     $("finishTitle").textContent =
       HUNT_CONFIG.finish.title ||
       "Treasure Found";
 
+
     $("finishMessage").textContent =
       HUNT_CONFIG.finish.message ||
       "";
+
 
     $("finishInstruction").textContent =
       HUNT_CONFIG.finish.instruction ||
       "";
   }
 
+
   window.scrollTo({
     top: 0,
     behavior: "smooth"
@@ -400,22 +836,31 @@ function showFinish() {
 }
 
 
-/* =====================================================
-   RESTART
-   ===================================================== */
+// ==================================================
+// RESTART
+// ==================================================
 
 function restart() {
 
   historyStack = [];
+
   currentId = null;
 
   unlockedClues.clear();
 
-  $("finishScreen").classList.add("hidden");
 
-  $("clueScreen").classList.add("hidden");
+  $("finishScreen").classList.add(
+    "hidden"
+  );
 
-  $("startScreen").classList.remove("hidden");
+  $("clueScreen").classList.add(
+    "hidden"
+  );
+
+  $("startScreen").classList.remove(
+    "hidden"
+  );
+
 
   window.scrollTo({
     top: 0,
@@ -423,6 +868,10 @@ function restart() {
   });
 }
 
+
+// ==================================================
+// GO HOME
+// ==================================================
 
 function goHome() {
 
@@ -432,36 +881,52 @@ function goHome() {
 }
 
 
-/* =====================================================
-   ERROR
-   ===================================================== */
+// ==================================================
+// ERROR
+// ==================================================
 
-function showError(message) {
+function showError(
+  message
+) {
 
-  $("clueScreen").classList.remove("hidden");
+  $("clueScreen").classList.remove(
+    "hidden"
+  );
 
-  $("startScreen").classList.add("hidden");
+  $("startScreen").classList.add(
+    "hidden"
+  );
 
-  $("finishScreen").classList.add("hidden");
+  $("finishScreen").classList.add(
+    "hidden"
+  );
+
 
   $("clueTitle").textContent =
     "Configuration error";
 
+
   $("question").textContent =
     message;
 
-  $("answers").innerHTML = "";
+
+  $("answers").innerHTML =
+    "";
 }
 
 
-/* =====================================================
-   SECURITY / HTML ESCAPE
-   ===================================================== */
+// ==================================================
+// ESCAPE HTML
+// ==================================================
 
-function escapeHtml(value) {
+function escapeHtml(
+  value
+) {
 
   const div =
-    document.createElement("div");
+    document.createElement(
+      "div"
+    );
 
   div.textContent =
     value ?? "";
@@ -469,5 +934,9 @@ function escapeHtml(value) {
   return div.innerHTML;
 }
 
+
+// ==================================================
+// START
+// ==================================================
 
 init();
