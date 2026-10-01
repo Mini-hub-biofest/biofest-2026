@@ -2722,3 +2722,32 @@ a {
         font-size: 0.74rem;
     }
 }
+/* OPEN FOR ALL NEON GLOW */
+
+.card-link-text.open-for-all {
+    color: #ffffff !important;
+    text-shadow:
+        0 0 5px #00f2fe,
+        0 0 10px #00f2fe,
+        0 0 20px #00f2fe,
+        0 0 35px #00ff87;
+
+    animation: openForAllPulse 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes openForAllPulse {
+    0% {
+        text-shadow:
+            0 0 4px #00f2fe,
+            0 0 8px #00f2fe,
+            0 0 15px rgba(0, 242, 254, 0.7);
+    }
+
+    100% {
+        text-shadow:
+            0 0 5px #00f2fe,
+            0 0 12px #00f2fe,
+            0 0 22px #00ff87,
+            0 0 35px rgba(0, 242, 254, 0.8);
+    }
+}
