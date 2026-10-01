@@ -2722,3 +2722,36 @@ a {
         font-size: 0.74rem;
     }
 }
+/* =========================================================
+   OPEN FOR ALL - NEON GLOW
+   ========================================================= */
+
+.open-for-all {
+    color: #ffffff !important;
+    opacity: 1 !important;
+
+    text-shadow:
+        0 0 4px #00f2fe,
+        0 0 8px #00f2fe,
+        0 0 15px rgba(0, 242, 254, 0.9),
+        0 0 25px rgba(0, 255, 135, 0.7);
+
+    animation: openForAllGlow 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes openForAllGlow {
+    from {
+        text-shadow:
+            0 0 4px #00f2fe,
+            0 0 8px #00f2fe,
+            0 0 14px rgba(0, 242, 254, 0.8);
+    }
+
+    to {
+        text-shadow:
+            0 0 5px #00f2fe,
+            0 0 12px #00f2fe,
+            0 0 22px #00ff87,
+            0 0 35px rgba(0, 242, 254, 0.8);
+    }
+}
